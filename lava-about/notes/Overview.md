@@ -1,0 +1,20 @@
+# Overview
+**completed: ✅**
+- complete run command
+	- basic functionality ✅
+	- optimize using recently modified 
+	- optimize with cached data in hidden files
+- watch command
+	- allow for active terminal to input commands to create files and directories
+	-  allow for active terminal to input commands to run templates
+- templates
+	- allow for for loops
+	- allow for if statements 
+	- allow for params ✅
+	- allow for file/directory creation
+	- allow for figuring out how many templates on each page or dir of certain type or total
+	- allow for figuring out how many headers, subheaders
+	- allows for either conflicts merge like git or read in updated values into templates or both
+	- decorators
+		- type of templates that parse and modify style of page
+		- lnline call located at the top of a file (or i guess anywhere?? idea)
