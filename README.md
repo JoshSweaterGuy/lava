@@ -66,4 +66,5 @@ node . run -n [notes-directory] -t [templates-directory]
 ```
 
 creator: Joshua Davis
+
 contributors:

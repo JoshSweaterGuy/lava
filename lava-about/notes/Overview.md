@@ -1,5 +1,8 @@
 # Overview
 **completed: ✅**
+- command line interface logistics
+	- create a package on a service
+	- make root so commands run as "lava \[command] ..."
 - complete run command
 	- basic functionality ✅
 	- optimize using recently modified 

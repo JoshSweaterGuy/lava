@@ -6,7 +6,7 @@
       {
         "id": "68e506acf4993731",
         "type": "leaf",
-        "dimension": 61.36363636363637,
+        "dimension": 58.10606060606061,
         "state": {
           "type": "markdown",
           "state": {
@@ -20,7 +20,7 @@
       {
         "id": "af2228c2fdf41a0d",
         "type": "leaf",
-        "dimension": 38.63636363636363,
+        "dimension": 41.89393939393939,
         "state": {
           "type": "markdown",
           "state": {
@@ -144,7 +144,7 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "af2228c2fdf41a0d",
+  "active": "68e506acf4993731",
   "lastOpenFiles": [
     "notes/Dev-board.md",
     "notes/Overview.md",
