@@ -1,0 +1,4 @@
+## %%! params.title !%%
+- %%! params.date !%%
+- %%! date !%%
+%%! js "new Date" !%%

@@ -1,0 +1,7 @@
+{
+    "watch": "live reload of files",
+    "run": "run reload of files",
+    "-n": "-notes",
+    "-t": "-templates"
+
+}

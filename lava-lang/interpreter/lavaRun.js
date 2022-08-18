@@ -2,7 +2,7 @@ import { forEachFileInDir, writeBack } from '../lavaLangHelpers.js'
 import parseNote from '../inlineParser/parseNote.js'
 import lavaInject from '../lavaParser/lavaInject.js'
 import path from 'path'
-import { compileFunction } from 'vm'
+// import { compileFunction } from 'vm'
 
 async function lavaRun(notesDir, templatesDir) {
     let templates = {}

@@ -1,6 +1,6 @@
-import { consoleOutput } from "./consoleTool/commandLineHelpers.js"
-import filterAndExecuteCommand from "./consoleTool/filterAndExecuteCommand.js"
-import helpOutput from "./consoleTool/consoleOutput/help.js";
+import { consoleOutput } from "./lava-console/commandLineHelpers.js"
+import filterAndExecuteCommand from "./lava-console/filterAndExecuteCommand.js"
+import helpOutput from "./lava-console/consoleOutput/help.js";
 
 const args = process.argv
 
