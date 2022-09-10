@@ -1,47 +1,33 @@
 {
   "main": {
-    "id": "d5bf284a92ced010",
+    "id": "fdd08c985d625d7d",
     "type": "split",
     "children": [
       {
-        "id": "57054c2df61efa4e",
+        "id": "0d98d745d08f3fd6",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "test.md",
+            "file": "notes/test.md",
             "mode": "source",
-            "source": true
+            "source": false
           }
-        },
-        "group": "dca82abc65998f23"
-      },
-      {
-        "id": "8fa6cdc85434ec69",
-        "type": "leaf",
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "test.md",
-            "mode": "preview",
-            "source": true
-          }
-        },
-        "group": "dca82abc65998f23"
+        }
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "61d51ca3f726ba3c",
+    "id": "b2dce7c3069fbb66",
     "type": "split",
     "children": [
       {
-        "id": "91502c8996784b9e",
+        "id": "95b633daa7db8db8",
         "type": "tabs",
         "children": [
           {
-            "id": "1571f8546f32fa11",
+            "id": "e8b17f505543ccae",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -49,7 +35,7 @@
             }
           },
           {
-            "id": "ec4e31c9364752d1",
+            "id": "2d92b884d9e7e024",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -64,7 +50,7 @@
             }
           },
           {
-            "id": "4adc22c440debf98",
+            "id": "01b3b9eb24c8deba",
             "type": "leaf",
             "state": {
               "type": "starred",
@@ -75,23 +61,23 @@
       }
     ],
     "direction": "horizontal",
-    "width": 106.5
+    "width": 300
   },
   "right": {
-    "id": "30628b2c3bfbbb23",
+    "id": "15da228f70ca0834",
     "type": "split",
     "children": [
       {
-        "id": "940e2d7f93ecd8f4",
+        "id": "2bcd1fd4bf30f9e2",
         "type": "tabs",
         "children": [
           {
-            "id": "fbce20f18b92e1ab",
+            "id": "d4d962836106b4b7",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "test.md",
+                "file": "notes/test.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,19 +89,19 @@
             }
           },
           {
-            "id": "7b543c9c21aab994",
+            "id": "bdd6d877beea0f54",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "test.md",
+                "file": "notes/test.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "11dd84293bc07d21",
+            "id": "82ad851f65dc3d7b",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -126,12 +112,12 @@
             }
           },
           {
-            "id": "199e17d1e3176853",
+            "id": "c47ff7c50b52fae6",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "test.md"
+                "file": "notes/test.md"
               }
             }
           }
@@ -142,6 +128,6 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "57054c2df61efa4e",
+  "active": "e8b17f505543ccae",
   "lastOpenFiles": []
 }

@@ -52,27 +52,33 @@ function lavaInject(input, filename, fileData) {
  */
 function lavaEmbedInput(template, input) {
     let output = template
-    let inlineTemplates = getLocationOfStartStopWithinString(template, LAVA_CONSTANTS.lavaFile.inlineStart, LAVA_CONSTANTS.lavaFile.inlineEnd, [LAVA_CONSTANTS.lavaFile.inlineStart])
+    let inlineTemplates = getLocationOfStartStopWithinString(template, LAVA_CONSTANTS.lavaFile.inlineStart, LAVA_CONSTANTS.lavaFile.inlineEnd, [LAVA_CONSTANTS.lavaFile.inlineStart], [["%%@", "@%%"]])
     // let finalReplacementInline = []
 
     for (let i = inlineTemplates.length - 1; i >= 0; i--) { 
         const inline = inlineTemplates[i]
-        const data = template.substring(inline.startWithout, inline.endWithout).trim()
-        const calls = data.match(/(".*?"|[^"\s]+)+(?=\s*|\s*$)/g)
-        const call = calls[0]
-        let replacement = ""
-        if (call.split(".")[0] === "params") {
-            replacement = convertLavaKeyToValue(input, data)
+        if (inline.type === "COMMENT") {
+            console.log("NOT PRINTING COMMENT")
+            output = output.substring(0, inline.startWith) + output.substring(inline.endWith)
         }
-        if (call === "date") {
-            replacement = new Date().toISOString()
+        else if (inline.type === "EXCLAMATION") {
+            console.log("DOING EXCLAMATION")
+            const data = template.substring(inline.startWithout, inline.endWithout).trim()
+            const calls = data.match(/(".*?"|[^"\s]+)+(?=\s*|\s*$)/g)
+            const call = calls[0]
+            let replacement = ""
+            if (call.split(".")[0] === "params") {
+                replacement = convertLavaKeyToValue(input, data)
+            }
+            if (call === "date") {
+                replacement = new Date().toISOString()
+            }
+            if (calls[0] == "js") {
+                replacement = eval(data.substring(2).replace(/['"`]+/g, ''))
+            }
+    
+            output = output.substring(0, inline.startWith) + replacement + output.substring(inline.endWith)
         }
-        if (calls[0] == "js") {
-            replacement = eval(data.substring(2).replace(/['"`]+/g, ''))
-        }
-
-        output = output.substring(0, inline.startWith) + replacement + output.substring(inline.endWith)
-
     }
 
     return '\n' + output + '\n' + LAVA_CONSTANTS.inlineLava.startInlineLava + " end " + LAVA_CONSTANTS.inlineLava.endInlineLava + '\n'

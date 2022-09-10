@@ -1,2 +1,28 @@
-%%! params.list.apples !%%
-YOOO
+%%@ 
+    this is a comment
+    This is the dream with templating in this file
+    params:
+        - apples -> array of apples
+        - people -> array of people
+    ~~~~~~~~
+    tabdef: default = 1, sets the depth of tabs to subtract for injecting back (recursive)
+    ANY FREE TEXT is in inline call as well as any text generated in exclamations
+    NO comments appear in final or star(*) commands
+@%%
+HEY THIS IS START OF INLINE
+%%! FOR apple IN params.apples {
+    %%! FOR person IN params.people: tabdef=2 {
+        %%! IF person == any("John"): tabdef=2 {
+                %%! person !%% REALLY likes %%! apple !%%!
+        } ELSE {
+            %%! person !%% likes %%! apple !%%!
+        }!%%
+    }!%%
+
+    There are %%! amt(HEADERS) !%% Headers!
+}!%%
+%%* MANY(
+    IFMAKEFILL: (./newFIle.md, ./myTemplate.lava),
+    IFMAKE: ./newFIle2.md,
+    IFRM: ./rmme.md
+)*%%
