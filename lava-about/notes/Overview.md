@@ -3,6 +3,8 @@
 - command line interface logistics
 	- create a package on a service
 	- make root so commands run as "lava \[command] ..."
+	- use color library to make better debug output and look prettier
+
 - complete run command
 	- basic functionality ✅
 	- optimize using recently modified 

@@ -1,19 +1,32 @@
-# Hello
-
-%%| { "title": "CS188", "date": "TODAY"} make_course -> auto |%%
-
-## CS188
-- TODAY
-- 2022-09-10T08:35:59.223Z
-Sat Sep 10 2022 02:35:59 GMT-0600 (Mountain Daylight Time)
-%%| end |%%
-
-
 %%| 
 { "apples": [
 	"Red",
-	"Green"] } simple_apples -> auto
+	"Granny", "Fuji"],
+    "people": [
+        "Josh",
+        "Andy",
+        "Jamie",
+        "Tony"
+    ]
+    
+}
+     simple_apples -> auto
 |%%
-HEY EMMA
-I like Red,Green
+
+HEY JOSH
+I like Red,Granny,Fuji
+
+Josh likes Red apples!
+Andy likes Red apples!
+Jamie likes Red apples!
+Tony likes Red apples!
+Josh likes Granny apples!
+Andy likes Granny apples!
+Jamie likes Granny apples!
+Tony likes Granny apples!
+Josh likes Fuji apples!
+Andy likes Fuji apples!
+Jamie likes Fuji apples!
+Tony likes Fuji apples!
+
 %%| end |%%

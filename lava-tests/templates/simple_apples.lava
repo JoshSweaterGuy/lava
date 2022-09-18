@@ -8,30 +8,12 @@
     tabdef: default = 1, sets the depth of tabs to subtract for injecting back (recursive)
     ANY FREE TEXT is in inline call as well as any text generated in exclamations
     NO comments appear in final or star(*) commands
-@%%HEY EMMA
-I like %%! params.apples !%%
-%%@
-
-%%! IF params.apples != [] {
-    I GOT APPLES
-} ELSE {
-    I DONT GOT APPLES
-}!%%
-
-%%! FOR int in [0:10] {
-    MY FAV NUM IS %%! int !%%!
-}!%%
-%%! FOR apple in params.apples {
-    I REALLY like %%! apple !%%!
-}!%%
-%%! MAP params.apples: {
-    I REALLY like %%! value !%%!
-    I REALLY like %%! value.0 !%%!
-    Or you can do %%! .0 !%%!
-    %%! MAP params.apples: {
-        level 2 map %%! value !%%!
-        level 2 map %%! .1 !%%!
-        get level 1 map %%! .0 !%%!
-    }!%%
-}!%%
 @%%
+HEY JOSH
+I like %%! params.apples !%%
+
+%%! FOR apple in params.apples {
+    %%! FOR person in params.people {
+        %%! person !%% likes %%! apple !%% apples!
+    } !%%
+} !%%

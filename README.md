@@ -51,11 +51,38 @@ to inject paramaters into inline lava use the params json object
 {
     "cool": {
         "hello": "world"
-    }
+    },
+    "apples": ["Red", "Green", "Fuji"],
+    "people": ["Josh", "John", "Alice"]
+
 }
 
 // inside a .lava template
 ex: %%! params.cool.hello !%%
+
+### looping
+// loop over arrays
+
+%%!FOR apple in params.apples {
+    I like %%! apple !%% apples!
+}!%%
+
+>output:
+>I like Red apples!
+>I like Green apples!
+>I like Fuji apples!
+
+//nested for loops
+
+%%!FOR apple in params.apples {
+    %%!FOR person in params.people {
+        %%! person !%% like's %%! apple !%% apples!
+    }!%%
+}!%%
+
+### comments
+
+%%@ hello this is a comment in a .lava file @%%
 
 ## Executing Commands
 

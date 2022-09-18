@@ -26,3 +26,30 @@ HEY THIS IS START OF INLINE
     IFMAKE: ./newFIle2.md,
     IFRM: ./rmme.md
 )*%%
+
+%%@
+
+%%! IF params.apples != [] {
+    I GOT APPLES
+} ELSE {
+    I DONT GOT APPLES
+}!%%
+
+%%! FOR int in [0:10] {
+    MY FAV NUM IS %%! int !%%!
+}!%%
+%%! FOR apple in params.apples {
+    I REALLY like %%! apple !%%!
+}!%%
+
+%%! MAP params.apples: {
+    I REALLY like %%! value !%%!
+    I REALLY like %%! value.0 !%%!
+    Or you can do %%! .0 !%%!
+    %%! MAP params.apples: {
+        level 2 map %%! value !%%!
+        level 2 map %%! .1 !%%!
+        get level 1 map %%! .0 !%%!
+    }!%%
+}!%%
+@%%
