@@ -45,7 +45,7 @@ function lavaInject(input, filename, fileData) {
             output = output.substring(0, dataToLineNumber[i].startWith) + changeLifecycleInStringTo(getStringWith(output, dataToLineNumber[i]), "rendered") + output.substring(dataToLineNumber[i].endWith)
         }
     }
-    console.log(output)
+    // console.log(output)
 
     return output
 }

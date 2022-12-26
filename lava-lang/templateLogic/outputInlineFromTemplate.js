@@ -11,8 +11,8 @@ import { readAndInjectToTemplate } from './readAndInjectToTemplate.js'
  */
  function outputInlineFromTemplate(template, input) {
     let inlineTemplateTree = templateLexer(template)
-    console.log("TREE")
-    inlineTemplateTree.print()
+    // console.log("TREE")
+    // inlineTemplateTree.print()
     return '\n' + readAndInjectToTemplate(inlineTemplateTree, input, {})
 }
 

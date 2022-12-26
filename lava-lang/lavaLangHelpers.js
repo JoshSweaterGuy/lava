@@ -17,7 +17,7 @@ const forEachFileInDir = async (dir, completion) => {
 
     for(const file of files) { 
         if (file === "." || file === ".." || file[0] === ".") { 
-            console.log("ignoring hidden files")
+            // console.log("ignoring hidden files")
             continue
         }
         const newDir = path.join(dir, file);
@@ -73,8 +73,8 @@ function getLocationOfStartStopWithinString(inputString, startString, stopString
     let blocked = 0
     let isHaulted = false
 
-    // assert (inputString.length === inputString.length)
     forEachInStringByN(inputString, Math.max(startString.length, stopString.length), (index, substring) => {
+        // TODO: maybe fix so blocked is not needed
         if (blocked > 0) { 
             blocked -- 
             return

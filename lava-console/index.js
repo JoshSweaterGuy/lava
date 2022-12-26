@@ -10,11 +10,7 @@
 import lavaRun from "../lava-lang/interpreter/lavaRun.js";
 import init from "./utils/init.js";
 import cli from "./utils/cli.js";
-// import log from "./utils/log.js";
-
-// const init = require('./utils/init');
-// const cli = require('./utils/cli');
-// const log = require('./utils/log');
+import lavaWatchCLI from "./inputCLI.js";
 
 const input = cli.input;
 const flags = cli.flags;
@@ -22,12 +18,14 @@ const { notes, templates, objects } = flags;
 
 function run() {
 	console.log(`Running lava...`);
-	console.log(`Notes: ${notes}, Templates: ${templates}, Objects: ${objects}`);
 	lavaRun(notes, templates);
 }
 
 function watch() {
-	console.log(`Watching for changes...`);
+	console.log(`Watching for changes on...`);
+	console.log(`Notes: ${notes}, Templates: ${templates}, Objects: ${objects ? objects : templates}`);
+
+	lavaWatchCLI(notes, templates);
 }
 
 (async () => {

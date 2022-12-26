@@ -30,14 +30,14 @@ function readAndInjectToTemplate(tokenTree, input, localParams) {
             // console.log("calls", calls)
 
             if (checkIsDotFunction.toUpperCase() === "PARAMS") {
-                console.log("PARMS")
+                // console.log("PARMS")
 
                 replacement = convertLavaKeyToValue(input, localParams, call)
-                console.log("PUT", call, replacement)
+                // console.log("PUT", call, replacement)
 
             } else if (call in localParams) {
                 replacement = localParams[call]
-                console.log("PUT", call, localParams[call])
+                // console.log("PUT", call, localParams[call])
             } else if (call.toUpperCase() === "FOR") { 
                 const varName = calls[1]
                 const arrayName = calls[3]
@@ -105,7 +105,7 @@ function calculateConditional(input, localParams, condstr) {
 // takes in stripped string and input call and returns value for template
 function convertLavaKeyToValue(input, localParams, keyString) {
     const inputLocale = keyString.split(".")
-    console.log("I INPUT2", inputLocale)
+    // console.log("I INPUT2", inputLocale)
     if (keyString.substring(0, 1) === '"') {
         return keyString.substring(1, keyString.length - 1)
     }

@@ -11,7 +11,7 @@ import path from "path";
  * @param {string} inlineString the file being parsed.
  * @return {object} object with lava-input specification from inlineString.
  */
-function parseInlineLavaCommand(inlineString) {
+function parseInlineLavaCommand(inlineString, objectsPath) {
     const inlineStripped = inlineString
     let reducedInline = inlineStripped
     
@@ -39,7 +39,7 @@ function parseInlineLavaCommand(inlineString) {
             }
         }
         const paramsString = inlineStripped.substring(paramStart, paramEnd + 1)
-        getParams = jsonParse(paramsString)
+        getParams = jsonParse(paramsString, objectsPath)
         command = reducedInline
 
     } else {
@@ -60,11 +60,10 @@ function parseInlineLavaCommand(inlineString) {
 }
 
 
-function jsonParse(str) {
+function jsonParse(str, objectsPath) {
     let locations = getLocationOfStartStopWithinString(str, "...(", "),", [], [['"', '"']]) //['"', "'", ":", "\\", "("]
     let newStr = str
     let additions = {}
-    console.log("LOC " + locations)
     for (let loc of locations.reverse()) {
         if (loc.type === "COMMENT") {
             continue
@@ -73,22 +72,22 @@ function jsonParse(str) {
         let subValue = "" //"\"test\": \"test\""
         // TODO: make subjson work for custom paths and auto template path
         newStr = newStr.substring(0, loc.startWith) + subValue + newStr.substring(loc.endWith, newStr.length)
-        const newJsonFilePath = path.join("../lava-tests/templates", subJson);
+        const newJsonFilePath = path.join(objectsPath, subJson);
         subValue = readFileSync(newJsonFilePath, {encoding:'utf8', flag:'r'})
-        console.log("NAME:")
-        console.log(newJsonFilePath)
+        // console.log("NAME:")
+        // console.log(newJsonFilePath)
         
-        console.log("PATH:")
-        console.log(subValue)
+        // console.log("PATH:")
+        // console.log(subValue)
 
         additions = {...additions, ...JSON.parse(subValue)}
 
-        console.log(additions)
+        // console.log(additions)
 
     }
 
-    console.log("NEW JSON")
-    console.log(newStr)
+    // console.log("NEW JSON")
+    // console.log(newStr)
     return {...additions, ...JSON.parse(newStr)}
 }
 

@@ -1,0 +1,144 @@
+{
+  "main": {
+    "id": "fdd08c985d625d7d",
+    "type": "split",
+    "children": [
+      {
+        "id": "49e68b00cb47ccba",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0d98d745d08f3fd6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "notes/advanced_apple_picking.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "b2dce7c3069fbb66",
+    "type": "split",
+    "children": [
+      {
+        "id": "95b633daa7db8db8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e8b17f505543ccae",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "2d92b884d9e7e024",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "01b3b9eb24c8deba",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "15da228f70ca0834",
+    "type": "split",
+    "children": [
+      {
+        "id": "2bcd1fd4bf30f9e2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d4d962836106b4b7",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "notes/advanced_apple_picking.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "bdd6d877beea0f54",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "notes/advanced_apple_picking.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "82ad851f65dc3d7b",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "c47ff7c50b52fae6",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "notes/advanced_apple_picking.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "0d98d745d08f3fd6",
+  "lastOpenFiles": [
+    "notes/apple_picking.md",
+    "notes/advanced_apple_picking.md"
+  ]
+}
