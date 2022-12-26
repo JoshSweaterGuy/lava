@@ -1,4 +1,8 @@
 import { emptyLavaInput, makeLavaInput } from '../makeLavaInput.js'
+import { getLocationOfStartStopWithinString } from '../lavaLangHelpers.js'
+import { readdir, stat, readFile, writeFile, readFileSync } from 'node:fs';
+import path from "path";
+// const fs = require('fs.js');
 
 /**
  * converts inline lava command to lava-input object.
@@ -35,7 +39,7 @@ function parseInlineLavaCommand(inlineString) {
             }
         }
         const paramsString = inlineStripped.substring(paramStart, paramEnd + 1)
-        getParams = JSON.parse(paramsString)
+        getParams = jsonParse(paramsString)
         command = reducedInline
 
     } else {
@@ -53,6 +57,39 @@ function parseInlineLavaCommand(inlineString) {
     }
 
     return makeLavaInput(command, getParams, lifecycle)
+}
+
+
+function jsonParse(str) {
+    let locations = getLocationOfStartStopWithinString(str, "...(", "),", [], [['"', '"']]) //['"', "'", ":", "\\", "("]
+    let newStr = str
+    let additions = {}
+    console.log("LOC " + locations)
+    for (let loc of locations.reverse()) {
+        if (loc.type === "COMMENT") {
+            continue
+        }
+        let subJson = str.substring(loc.startWithout, loc.endWithout)
+        let subValue = "" //"\"test\": \"test\""
+        // TODO: make subjson work for custom paths and auto template path
+        newStr = newStr.substring(0, loc.startWith) + subValue + newStr.substring(loc.endWith, newStr.length)
+        const newJsonFilePath = path.join("../lava-tests/templates", subJson);
+        subValue = readFileSync(newJsonFilePath, {encoding:'utf8', flag:'r'})
+        console.log("NAME:")
+        console.log(newJsonFilePath)
+        
+        console.log("PATH:")
+        console.log(subValue)
+
+        additions = {...additions, ...JSON.parse(subValue)}
+
+        console.log(additions)
+
+    }
+
+    console.log("NEW JSON")
+    console.log(newStr)
+    return {...additions, ...JSON.parse(newStr)}
 }
 
 export default parseInlineLavaCommand;

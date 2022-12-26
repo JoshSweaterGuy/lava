@@ -1,6 +1,6 @@
 import { forEachFileInDir, writeBack } from '../lavaLangHelpers.js'
-import parseNote from '../inlineParser/parseNote.js'
-import lavaInject from '../lavaParser/lavaInject.js'
+import parseNote from '../inlineLogic/parseNote.js'
+import lavaInject from '../templateLogic/lavaInject.js'
 import path from 'path'
 // import { compileFunction } from 'vm'
 

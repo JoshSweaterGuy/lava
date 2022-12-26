@@ -17,21 +17,6 @@ function parseNote(note) {
             return noteContent.substring(range.startWithout, range.endWithout)
     
         }).map((inlineString) => parseInlineLavaCommand(inlineString))
-    // forEachInStringByN(noteContent, 3, (index, substring) => {
-    //     // console.log(substring)
-    //     if (substring === "%%|" && !didFindInput) {
-    //         didFindInput = true
-    //         lavaInputs.push({start: index, end: undefined})
-    //     } else if (substring === "|%%" && didFindInput) {
-    //         didFindInput = false
-    //         lavaInputs[lavaInputs.length - 1].end = index
-    //     }
-    // })
-    
-    // return lavaInputs.map( (range) => {
-    //     return noteContent.substring(range.start, range.end)
-    
-    // }) .map((inlineString) => parseInlineLavaCommand(inlineString))
 }
 
 export default parseNote;

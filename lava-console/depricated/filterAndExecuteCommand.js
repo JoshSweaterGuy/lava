@@ -34,6 +34,7 @@ function filterAndExecuteCommand(args) {
                 }
                 break
             }
+            // TODO: add flag to run test suite
         }
     }
 

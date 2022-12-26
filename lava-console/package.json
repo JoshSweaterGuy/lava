@@ -1,0 +1,38 @@
+{
+	"name": "lava",
+	"description": "A Markdown Generation language built for Obsidian note taking.",
+	"version": "0.0.1",
+	"license": "UNLICENSED",
+	"type": "module",
+	"bin": {
+		"lava": "index.js"
+	},
+	"author": {
+		"name": "Joshua Davis",
+		"email": "chess.ofx@gmail.com",
+		"url": "https://josh-davis.dev"
+	},
+	"keywords": [
+		"lava",
+		"Joshua Davis"
+	],
+	"files": [
+		"index.js",
+		"utils"
+	],
+	"scripts": {
+		"format": "prettier --write \"./**/*.{js,json}\""
+	},
+	"dependencies": {
+		"chalk": "^4.1.2",
+		"cli-alerts": "^1.2.2",
+		"cli-handle-error": "^4.4.0",
+		"cli-handle-unhandled": "^1.1.1",
+		"cli-meow-help": "^3.1.0",
+		"cli-welcome": "^2.2.2",
+		"meow": "^9.0.0"
+	},
+	"devDependencies": {
+		"prettier": "^2.8.1"
+	}
+}

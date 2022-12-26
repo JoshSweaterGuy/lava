@@ -1,6 +1,6 @@
 import {consoleOutput, hasFlag} from "./commandLineHelpers.js"
-import lavaRun from "../lava-lang/interpreter/lavaRun.js";
-import lavaWatch from "../lava-lang/interpreter/lavaWatch.js";
+import lavaRun from "../../lava-lang/interpreter/lavaRun.js";
+import lavaWatch from "../../lava-lang/interpreter/lavaWatch.js";
 
 function excecuteCommand(command, notesDir, templatesDir) {
     if ( notesDir == undefined || templatesDir == undefined  || command == undefined ){ 

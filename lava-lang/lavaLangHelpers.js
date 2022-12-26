@@ -65,188 +65,84 @@ function getStringWithout(output, dataIndices) { return output.substring(dataInd
  * @return {[object]} returns an array of objects with the start and end of the substrings with or without the start and stop strings.
  * returns object template {startWithout: {string}, endWithout: {string}, startWith: {string}, endWith: {string}, type: {string}}
  */
-function getLocationOfStartStopWithinString(inputString, startString, stopString, saftyCheckStrings, comments = [], keepStartStopStrings = false) {
+function getLocationOfStartStopWithinString(inputString, startString, stopString, saftyCheckStrings = [], comments = [], keepStartStopStrings = false) {
+    // TODO: safety checks may not check properly
     let subStringLocations = []
     let withinStartString = false
     let inComment = false
     let blocked = 0
     let isHaulted = false
 
-    assert (inputString.length === inputString.length)
-    forEachInStringByN(inputString, startString.length, (index, substring) => {
+    // assert (inputString.length === inputString.length)
+    forEachInStringByN(inputString, Math.max(startString.length, stopString.length), (index, substring) => {
         if (blocked > 0) { 
             blocked -- 
             return
         }
-        
+
         for (let cmt of comments) {
             if (inComment) {
-                if (cmt[1] === substring) {
+                if (substring.includes(cmt[1])) {
                     inComment = false;
                     subStringLocations[subStringLocations.length - 1].endWith = index + stopString.length
                     subStringLocations[subStringLocations.length - 1].endWithout = index
+                    blocked = substring.indexOf(cmt[1]) + cmt[1].length - 1
                 }
                 isHaulted = true
 
             } else {
-                if (cmt[0] === substring) {
+                if (substring.includes(cmt[0])) {
                     inComment = true;
                     subStringLocations.push({startWith: index, 
                                             startWithout: index + startString.length,
                                             endWith: undefined, endWithout: undefined, type: "COMMENT"})
                     isHaulted = true
+                    blocked = substring.indexOf(cmt[0]) + cmt[0].length - 1
                 }
 
             }
         }
         if (!isHaulted) {
-            if (saftyCheckStrings.every(saftyString => { return saftyString === substring.substring(0, saftyString.length) }) && withinStartString) {
+            // TODO: may error if start safty different sizes or at end of string
+            if (saftyCheckStrings.length > 0 && saftyCheckStrings.every(saftyString => { return saftyString === substring.substring(0, saftyString.length) }) && withinStartString) {
                 subStringLocations.pop()
                 withinStartString = false
-            } else if (substring === startString) {
-                subStringLocations.push({startWith: index, 
-                                        startWithout: index + startString.length,
+
+            } 
+            else if (substring.includes(startString)) {
+                let newIdx = index + substring.indexOf(startString)
+                subStringLocations.push({startWith: newIdx, 
+                                        startWithout: newIdx + startString.length,
                                         endWith: undefined, endWithout: undefined, type: "EXCLAMATION"})
                 withinStartString = true
+                blocked = substring.indexOf(startString) + startString.length - 1
 
-            } else if (substring === stopString && withinStartString) {
-                subStringLocations[subStringLocations.length - 1].endWith = index + stopString.length
-                subStringLocations[subStringLocations.length - 1].endWithout = index
+            } else if (substring.includes(stopString) && withinStartString) {
+                let blkEndAmt = substring.indexOf(stopString)
+                let newIdx = index + blkEndAmt
+
+                subStringLocations[subStringLocations.length - 1].endWith = newIdx + stopString.length
+                subStringLocations[subStringLocations.length - 1].endWithout = newIdx
                 withinStartString = false
-                blocked = stopString.length - 1
+                blocked = blkEndAmt + stopString.length - 1
+    
             }
         } else { 
             if(!inComment) { isHaulted = false }
         }
     })
 
-
     if (withinStartString) {
         subStringLocations.pop()
     }
 
-    // console.log("START STOPS", subStringLocations)
-
     return subStringLocations
 }
 
-class TokenTreeNode {
-    constructor(value, branches = []) {
-        // array of ParseTreeNodes
-        this.branches = branches
-        // start stop substring object
-        this.value = value
-    }
-
-    add(node) {
-        this.branches.push(node)
-    }
-
-    print() {
-        console.log(this.value)
-        for (let branch of this.branches) {
-            branch.print()
-        }
-    }
-}
-
-/**
- * injects the lava template with lava-input object data/
- *
- * @param {string} inputString input template to parse  
- * @param {boolean} keepStartStopStrings do you want to keep the start and stop strings in the output?
- * 
- * @return {[object]} returns an array of objects with the start and end of the substrings with or without the start and stop strings.
- * returns object template {startWithout: {string}, endWithout: {string}, startWith: {string}, endWith: {string}, type: {string}}
- */
-function parseAndTokenizeTemplate(template) {
-    const substrSize = 3
-    const commentstr = { start: "%%@", stop: "@%%", name: "COMMENT" }
-    const exclamstr = { start: "%%!", stop: "!%%", name: "EXCLAMATION" }
-    const commandstr = { start: "%%*", stop: "*%%", name: "COMMAND" }
-    const makeTokenObject = (gblStrt, index, type) => {
-        return {startWith: index, 
-                startWithout: index + substrSize,
-                type: type,
-                globalStart: gblStrt
-            }
-    }
-
-    // let tokenCalls = []
-    let tokenTree = new TokenTreeNode({
-        startWith: 0, 
-        startWithout: 0,
-        endWith: template.length, 
-        endWithout: template.length,
-        type: "ROOT", 
-        value: template,
-        call: "",
-        body: "",
-        globalStart: 0
-        //template
-    }, [])
-    let stack = []
-
-    for (let index = 0; index < template.length - (substrSize - 1); index++) {
-        const substring = template.substring(index, index + substrSize)
-
-        for (let typestr of [commentstr, exclamstr, commandstr]) {
-
-            if (substring === typestr.start) {
-                // index - tokenTree.value.startWith
-                const val = makeTokenObject(index, (index - tokenTree.value.globalStart), typestr.name)
-                stack.push([tokenTree, val])
-                tokenTree.add(new TokenTreeNode(val))
-                tokenTree = tokenTree.branches.at(-1)
-                index += substrSize
-                // console.log("BELOW", tokenTree)
-
- 
-            } else if (substring === typestr.stop) {
-                const [upptr, last] = stack.pop()
-                if (last.type !== typestr.name) {
-                    exit(1)
-                }
-                // const rgr = /%%![\s]([^{}]*){((?s).*)}[\s]*!%%/
-                const my_str = template.substring(last.globalStart + substrSize, index)
-                const indFirst = my_str.indexOf("{")
-
-                last.value = template.substring(last.globalStart, index + substrSize)
-                if (indFirst !== -1) {
-                    last.call = my_str.substring(0, indFirst)
-                    last.body = my_str.substring(indFirst + 1, my_str.lastIndexOf("}"))
-                } else {
-                    last.call = my_str
-                    last.body = ""
-                }
-
-                last.endWith = (index - upptr.value.globalStart) + substrSize
-                last.endWithout = (index - upptr.value.globalStart) - last.call.length
-                // last.startWith += (last.call.length + substrSize + 1)
-                // last.startWithout += (last.call.length + substrSize + 1)
-                // last.endWith = (index - (upptr.value.startWith + last.call.length + substrSize + 1))
-                // last.endWithout = (index - (upptr.value.startWith + last.call.length + substrSize + 1))
-
-                tokenTree = upptr
-                index += substrSize
-            }
-        }
-
-    }
-    // console.log("MY TREE")
-    // tokenTree.print()
-    // console.log("END TREE")
-    // console.log("TOKEN CALLS", tokenCalls)
-    // console.log("stack", stack)
-    // console.log("END STACK")
-
-    return tokenTree
-}
 
 export { writeBack, 
     forEachFileInDir, 
     forEachInStringByN, 
     getLocationOfStartStopWithinString, 
     getStringWith, 
-    getStringWithout, 
-    parseAndTokenizeTemplate };
+    getStringWithout };
