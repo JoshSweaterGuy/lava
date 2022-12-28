@@ -8,8 +8,8 @@
  */
 
 import lavaRun from "../lava-lang/interpreter/lavaRun.js";
-import init from "./utils/init.js";
-import cli from "./utils/cli.js";
+import init from "./init.js";
+import cli from "./cli.js";
 import lavaWatchCLI from "./inputCLI.js";
 
 const input = cli.input;
