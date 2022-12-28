@@ -1,56 +1,35 @@
 {
   "main": {
-    "id": "fdd08c985d625d7d",
+    "id": "d5bf284a92ced010",
     "type": "split",
     "children": [
       {
-        "id": "49e68b00cb47ccba",
+        "id": "4d5962c50cf60cae",
         "type": "tabs",
         "children": [
           {
-            "id": "0d98d745d08f3fd6",
+            "id": "57054c2df61efa4e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "notes/apple_picking.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "470150b0502a7ef8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "notes/classes_test.md",
-                "mode": "source",
-                "source": true
-              }
+              "type": "empty",
+              "state": {}
             },
-            "group": "9e82bc3444582046"
+            "group": "dca82abc65998f23"
           }
-        ],
-        "currentTab": 1
+        ]
       },
       {
-        "id": "1a5d609b0990ea12",
+        "id": "075662e21697dcb0",
         "type": "tabs",
         "children": [
           {
-            "id": "58fedcd3a09350ff",
+            "id": "8fa6cdc85434ec69",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "notes/classes_test.md",
-                "mode": "preview",
-                "source": true
-              }
+              "type": "empty",
+              "state": {}
             },
-            "group": "9e82bc3444582046"
+            "group": "dca82abc65998f23"
           }
         ]
       }
@@ -58,15 +37,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "b2dce7c3069fbb66",
+    "id": "61d51ca3f726ba3c",
     "type": "split",
     "children": [
       {
-        "id": "95b633daa7db8db8",
+        "id": "91502c8996784b9e",
         "type": "tabs",
         "children": [
           {
-            "id": "e8b17f505543ccae",
+            "id": "1571f8546f32fa11",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -76,7 +55,7 @@
             }
           },
           {
-            "id": "2d92b884d9e7e024",
+            "id": "ec4e31c9364752d1",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -91,7 +70,7 @@
             }
           },
           {
-            "id": "01b3b9eb24c8deba",
+            "id": "4adc22c440debf98",
             "type": "leaf",
             "state": {
               "type": "starred",
@@ -102,23 +81,23 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200,
+    "collapsed": true
   },
   "right": {
-    "id": "15da228f70ca0834",
+    "id": "30628b2c3bfbbb23",
     "type": "split",
     "children": [
       {
-        "id": "2bcd1fd4bf30f9e2",
+        "id": "940e2d7f93ecd8f4",
         "type": "tabs",
         "children": [
           {
-            "id": "d4d962836106b4b7",
+            "id": "fbce20f18b92e1ab",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "notes/classes_test.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -130,19 +109,18 @@
             }
           },
           {
-            "id": "bdd6d877beea0f54",
+            "id": "7b543c9c21aab994",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "notes/classes_test.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "82ad851f65dc3d7b",
+            "id": "11dd84293bc07d21",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -153,13 +131,11 @@
             }
           },
           {
-            "id": "c47ff7c50b52fae6",
+            "id": "199e17d1e3176853",
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "notes/classes_test.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -169,10 +145,6 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "470150b0502a7ef8",
-  "lastOpenFiles": [
-    "notes/apple_picking.md",
-    "notes/classes_test.md",
-    "notes/advanced_apple_picking.md"
-  ]
+  "active": "57054c2df61efa4e",
+  "lastOpenFiles": []
 }

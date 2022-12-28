@@ -25,7 +25,7 @@ function watch() {
 	console.log(`Watching for changes on...`);
 	console.log(`Notes: ${notes}, Templates: ${templates}, Objects: ${objects ? objects : templates}`);
 
-	lavaWatchCLI(notes, templates);
+	lavaWatchCLI(notes, templates, objects);
 }
 
 (async () => {

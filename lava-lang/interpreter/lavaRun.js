@@ -2,17 +2,15 @@ import { forEachFileInDir, writeBack } from '../lavaLangHelpers.js'
 import parseNote from '../inlineLogic/parseNote.js'
 import lavaInject from '../templateLogic/lavaInject.js'
 import path from 'path'
+// import chalk from 'chalk';
+
 // import { compileFunction } from 'vm'
 
 // TODO: Create objectsDir funtionality
 async function lavaRun(notesDir, templatesDir, objectsDir = undefined) {
-    let templates = {}
-    if (objectsDir == undefined) { objectsDir = templatesDir }
     
-    await forEachFileInDir(templatesDir, async (callfilename, callTemplate) => { 
-        const noExtensionName = path.basename(callfilename).split(".")[0]
-        templates[noExtensionName] = callTemplate
-    })
+    const templates = await grabTemplates(templatesDir, objectsDir)
+    if (objectsDir == undefined) { objectsDir = templatesDir }
 
     await forEachFileInDir(notesDir, async (filename, data) => {
         const lavaInputs = parseNote(data, objectsDir)
@@ -34,11 +32,20 @@ async function lavaRun(notesDir, templatesDir, objectsDir = undefined) {
         writeBack(filename, output)
     })
 
+    // console.log(templates)
     return templates
 }
 
-async function checkRenderStatus() {
+async function grabTemplates(templatesDir) {
+    let templates = {}
+    
+    await forEachFileInDir(templatesDir, async (callfilename, callTemplate) => { 
+        const noExtensionName = path.basename(callfilename).split(".")[0]
+        templates[noExtensionName] = callTemplate
+    })
 
+    return templates
 }
 
+export { grabTemplates };
 export default lavaRun;

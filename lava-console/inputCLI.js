@@ -2,9 +2,14 @@ import { Worker } from "worker_threads";
 import readline from 'readline';
 import path from 'path'
 import { fileURLToPath } from 'url';
+import lavaCall from "../lava-lang/interpreter/lavaCall.js";
+import { grabTemplates } from "../lava-lang/interpreter/lavaRun.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+var templates = {}
+var workerData = {}
 
 const runWatch = (WorkerData) => {
     return new Promise((resolve, reject) => {
@@ -33,17 +38,22 @@ async function inputCLI() {
 }
 
 async function getInput() {
-    inputCLI().then((res) => {
+    inputCLI().then(async (res) => {
         if (res == "exit") {
             process.exit(0)
+        }
+        if (res != "") {
+            templates = await grabTemplates(workerData.templatesDir)
+            await lavaCall(templates, res)
+            // console.log(workerData)
         }
 
         getInput()
     })
 }
 
-async function lavaWatchCLI(notesDir, templatesDir) {
-    let workerData = { notesDir: notesDir, templatesDir: templatesDir }
+async function lavaWatchCLI(notesDir, templatesDir, objectsDir) {
+    workerData = { notesDir: notesDir, templatesDir: templatesDir, objectsDir: objectsDir }
     runWatch(workerData)
     getInput()
 }
