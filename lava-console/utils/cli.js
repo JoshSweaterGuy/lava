@@ -5,12 +5,6 @@ import meow from 'meow';
 import meowHelp from 'cli-meow-help';
 
 const flags = {
-	// clear: {
-	// 	type: `boolean`,
-	// 	default: false,
-	// 	alias: `c`,
-	// 	desc: `Clear the console`
-	// },
 
 	notes: {
 		type: `string`,
@@ -30,17 +24,6 @@ const flags = {
 		desc: `[Optional] Specify path to persistent objects directory`
 	},
 
-	// noClear: {
-	// 	type: `boolean`,
-	// 	default: false,
-	// 	desc: `Don't clear the console`
-	// },
-	// debug: {
-	// 	type: `boolean`,
-	// 	default: false,
-	// 	alias: `d`,
-	// 	desc: `Print debug info`
-	// },
 	version: {
 		type: `boolean`,
 		alias: `v`,
@@ -66,7 +49,5 @@ const options = {
 	hardRejection: false,
 	flags
 };
-
-// module.exports = meow(helpText, options);
 
 export default meow(helpText, options);

@@ -1,7 +1,7 @@
 {
-	"name": "lava",
+	"name": "lava-md",
 	"description": "A Markdown Generation language built for Obsidian note taking.",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"license": "UNLICENSED",
 	"type": "module",
 	"bin": {
@@ -16,9 +16,11 @@
 		"lava",
 		"Joshua Davis"
 	],
+	"homepage": "https://github.com/JoshSweaterGuy/lava#readme",
 	"files": [
 		"index.js",
-		"utils"
+		"**/*",
+		"*"
 	],
 	"scripts": {
 		"format": "prettier --write \"./**/*.{js,json}\""

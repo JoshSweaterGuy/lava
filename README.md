@@ -8,7 +8,6 @@ creator: Joshua Davis
 > open lava-about in obisidian for developer information on the development of LAVA
 
 ## Inline Lava
-
 all inline lava starts with **%%|** and ends with **|%%**.
 
 form:
@@ -152,5 +151,5 @@ lava init -n [notes-directory] -t [templates-directory] -o [objects-directory]
 
 script:
 ```bash
-lava script name [script-name] args [params]  # runs a template script
+lava script [script-name] [args...]  # runs a template script
 ```

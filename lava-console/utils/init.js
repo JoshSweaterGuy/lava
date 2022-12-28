@@ -1,8 +1,3 @@
-// const welcome = require('cli-welcome');
-// const pkg = require('./../package.json');
-// const unhandled = require('cli-handle-unhandled');
-
-
 import welcome from 'cli-welcome';
 import pkg from '../package.json' assert {type: 'json'};
 import unhandled from 'cli-handle-unhandled';

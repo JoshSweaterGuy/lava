@@ -9,6 +9,7 @@ async function lavaCall(templates, callFunc) {
         console.log(`"${callFunc}" template does not exist` )
         return
     }
+    
     console.log("Running", callFunc)
 
 }
