@@ -7,6 +7,10 @@ creator: Joshua Davis
 **NOT RECOMMENDED FOR PERSONAL USE**
 > open lava-about in obisidian for developer information on the development of LAVA
 
+```
+npm link -g lava-md
+```
+
 ## Inline Lava
 all inline lava starts with **%%|** and ends with **|%%**.
 

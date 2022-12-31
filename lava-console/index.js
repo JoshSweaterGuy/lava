@@ -8,13 +8,24 @@
  */
 
 import lavaRun from "../lava-lang/interpreter/lavaRun.js";
-import init from "./init.js";
+import help from "./init.js";
 import cli from "./cli.js";
 import lavaWatchCLI from "./inputCLI.js";
+import lavaInit from "../lava-lang/interpreter/lavaInit.js";
+import { existsSync, readFileSync } from "fs";
+// import 
+// import path from "path";
+// import process from "process";
+// import fetch from "node-fetch";
 
+// let rawdata = fs.readFileSync('student.json');
+// let student = JSON.parse(rawdata);
+// import lavaPaths from ".lava/lavaPaths.json";
+
+// const lavaPaths = undefined
 const input = cli.input;
 const flags = cli.flags;
-const { notes, templates, objects } = flags;
+let { notes, templates, objects } = flags;
 
 function run() {
 	console.log(`Running lava...`);
@@ -24,22 +35,49 @@ function run() {
 function watch() {
 	console.log(`Watching for changes on...`);
 	console.log(`Notes: ${notes}, Templates: ${templates}, Objects: ${objects ? objects : templates}`);
-
+	
+	
 	lavaWatchCLI(notes, templates, objects);
 }
 
+function init() {
+	console.log(`Initializing lava on...`);
+	console.log(`Notes: ${notes}, Templates: ${templates}, Objects: ${objects ? objects : templates}`);
+
+	lavaInit(notes, templates, objects);
+}
+
+function checkflags() {
+	if (notes === undefined || templates === undefined) { 
+		const lavaPaths = JSON.parse(readFileSync(`.lava/lavaPaths.json`));
+		if (lavaPaths !== undefined) { 
+			notes = lavaPaths.notesDir;
+			templates = lavaPaths.templatesDir;
+			objects = lavaPaths.objectsDir;
+		}
+		else {
+			console.log(`You must specify a notes and templates directory.`);
+			console.log(`or initialize lava on a directory with the command:`);
+			console.log(`lava init -n <notes> -t <templates> -o <objects>`);
+			return;
+		}
+	}
+}
+
 (async () => {
-	init({ clear: false });
-	// input.includes(`help`) && cli.showHelp(0);
-	input.includes(`version`) && cli.showVersion(0);
-	
-	input.includes(`run`) && notes && templates && run();
-	input.includes(`watch`) && notes && templates && watch();
+	help();
+	checkflags()
 
-	!input.includes(`run`) && !input.includes(`watch`) && !input.includes(`version`) && cli.showHelp(0)
-	// !(notes && templates) && console.log(`You must specify both a notes and templates directory!`);
+	if (input.includes(`version`)) {
+		cli.showVersion(0);
+	}
+	else if (notes && templates) {
+		input.includes(`init`) && init();
+		input.includes(`run`) && run();
+		input.includes(`watch`) && watch();
 	
+	}
+	else {
+	}
 
-	// log(`You must specify both a notes and templates directory!`, `error`);
-	// notes && log(flags);
 })();

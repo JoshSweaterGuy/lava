@@ -1,0 +1,5 @@
+{
+    "type": "module",
+    "description": "A Markdown Generation language built for Obsidian note taking.",
+    "version": "0.0.4"
+}

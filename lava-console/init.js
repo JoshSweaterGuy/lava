@@ -1,11 +1,10 @@
 import welcome from 'cli-welcome';
-import pkg from '../package.json' assert {type: 'json'};
-import unhandled from 'cli-handle-unhandled';
+import pkg from './package.json' assert {type: 'json'};
 
-
-// module.exports = 
-export default ({ clear = false }) => {
-	unhandled();
+// TODO: Change From using cli-welcome to use more custom cli-ux
+// (I dont like the way cli-welcome looks and it doesnt have a lot of options)
+// Use Figlet to create a custom welcome message
+export default function help() {
 	welcome({
 		title: `lava`,
 		tagLine: `by Joshua Davis`,
@@ -14,6 +13,6 @@ export default ({ clear = false }) => {
 		bgColor: '#FF0000',
 		color: '#000000',
 		bold: true,
-		clear
+		clear: false
 	});
-};
+}
