@@ -49,8 +49,8 @@ function init() {
 
 function checkflags() {
 	if (notes === undefined || templates === undefined) { 
-		const lavaPaths = JSON.parse(readFileSync(`.lava/lavaPaths.json`));
-		if (lavaPaths !== undefined) { 
+		if (existsSync(`.lava/lavaPaths.json`)) {
+			const lavaPaths = JSON.parse(readFileSync(`.lava/lavaPaths.json`));
 			notes = lavaPaths.notesDir;
 			templates = lavaPaths.templatesDir;
 			objects = lavaPaths.objectsDir;
@@ -76,8 +76,6 @@ function checkflags() {
 		input.includes(`run`) && run();
 		input.includes(`watch`) && watch();
 	
-	}
-	else {
 	}
 
 })();

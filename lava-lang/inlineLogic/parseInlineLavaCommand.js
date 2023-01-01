@@ -1,6 +1,6 @@
 import { emptyLavaInput, makeLavaInput } from '../makeLavaInput.js'
 import { getLocationOfStartStopWithinString } from '../lavaLangHelpers.js'
-import { readdir, stat, readFile, writeFile, readFileSync } from 'node:fs';
+import { readdir, stat, readFile, writeFile, readFileSync } from 'fs';
 import path from "path";
 // const fs = require('fs.js');
 

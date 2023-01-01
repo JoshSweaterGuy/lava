@@ -4,32 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "4d5962c50cf60cae",
+        "id": "b392c1efa4a0a31f",
         "type": "tabs",
         "children": [
           {
-            "id": "57054c2df61efa4e",
+            "id": "a8871722d607efb1",
             "type": "leaf",
             "state": {
               "type": "empty",
               "state": {}
-            },
-            "group": "dca82abc65998f23"
-          }
-        ]
-      },
-      {
-        "id": "075662e21697dcb0",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "8fa6cdc85434ec69",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            },
-            "group": "dca82abc65998f23"
+            }
           }
         ]
       }
@@ -145,6 +129,19 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "57054c2df61efa4e",
-  "lastOpenFiles": []
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "a8871722d607efb1",
+  "lastOpenFiles": [
+    "Untitled 1.canvas",
+    "Untitled.canvas"
+  ]
 }

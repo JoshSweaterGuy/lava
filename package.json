@@ -19,6 +19,9 @@
   "scripts": {
     "format": "prettier --write \"./**/*.{js,json}\""
   },
+  "exports": {
+    ".": "./exports.js"
+  },
   "dependencies": {
     "chalk": "^4.1.2",
     "cli-alerts": "^1.2.2",

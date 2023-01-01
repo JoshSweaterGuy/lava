@@ -144,14 +144,14 @@ lava watch -n [notes-directory] -t [templates-directory] -o [objects-directory]
 - runs lava run periodically (on changes)
 - shows terminal that allows you to run lava scripts
 
-**Not Implemented yet**
-
 init:
 ```bash
 lava init # prompts user to input directories
 lava init -n [notes-directory] -t [templates-directory] -o [objects-directory]
 ```
 - run in encapsulating directory and sets up paths to directories
+
+**Not Implemented yet**
 
 script:
 ```bash

@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { readdir, stat, readFile, writeFile } from 'node:fs/promises';
+import { readdir, stat, readFile, writeFile } from 'fs/promises';
 import assert from "assert";
 import { exit } from "process";
 
