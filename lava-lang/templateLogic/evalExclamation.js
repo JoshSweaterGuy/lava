@@ -1,3 +1,3 @@
-function evalExclamation (expr, scope, env) {
-  return !evalExpression(expr, scope, env);
+function evalExclamation(expr, scope, env) {
+	return !evalExpression(expr, scope, env);
 }

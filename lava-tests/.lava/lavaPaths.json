@@ -1,1 +1,5 @@
-{"notesDir":"./notes","templatesDir":"./templates","objectsDir":"./templates"}
+{
+	"notesDir": "./notes",
+	"templatesDir": "./templates",
+	"objectsDir": "./templates"
+}

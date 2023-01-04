@@ -1,53 +1,55 @@
 {
-  "name": "lava-md",
-  "description": "A Markdown Generation language built for Obsidian note taking.",
-  "version": "0.0.5",
-  "license": "MIT",
-  "type": "module",
-  "bin": {
-    "lava": "lava-console/index.js"
-  },
-  "author": "Joshua Davis <chess.ofx@gmail.com> (https://josh-davis.dev)",
-  "keywords": [
-    "lava",
-    "Joshua Davis",
-    "Markdown Generation",
-    "md",
-    "obsidian"
-  ],
-  "files": [
-    "lava-console/*",
-    "lava-core/*",
-    "lava-lang/*",
-    "exports.js"
-  ],
-  "homepage": "https://github.com/JoshSweaterGuy/lava#readme",
-  "scripts": {
-    "format": "prettier --write \"./**/*.{js,json}\"",
-    "test": "echo \"PASS: no tests are being run\" && exit 0"
-  },
-  "exports": {
-    ".": "./exports.js"
-  },
-  "dependencies": {
-    "chalk": "^4.1.2",
-    "cli-alerts": "^1.2.2",
-    "cli-handle-error": "^4.4.0",
-    "cli-handle-unhandled": "^1.1.1",
-    "cli-meow-help": "^3.1.0",
-    "cli-welcome": "^2.2.2",
-    "meow": "^9.0.0",
-    "node-fetch": "^3.3.0"
-  },
-  "devDependencies": {
-    "prettier": "^2.8.1"
-  },
-  "main": "lava-console/index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JoshSweaterGuy/lava.git"
-  },
-  "bugs": {
-    "url": "https://github.com/JoshSweaterGuy/lava/issues"
-  }
+	"name": "lava-md",
+	"description": "A Markdown Generation language built for Obsidian note taking.",
+	"version": "0.0.5",
+	"license": "MIT",
+	"type": "module",
+	"bin": {
+		"lava": "lava-console/index.js"
+	},
+	"author": "Joshua Davis <chess.ofx@gmail.com> (https://josh-davis.dev)",
+	"keywords": [
+		"lava",
+		"Joshua Davis",
+		"Markdown Generation",
+		"md",
+		"obsidian"
+	],
+	"files": [
+		"lava-console/*",
+		"lava-core/*",
+		"lava-lang/*",
+		"exports.js"
+	],
+	"homepage": "https://github.com/JoshSweaterGuy/lava#readme",
+	"scripts": {
+		"format": "prettier --write \"./**/*.{js,json}\"",
+		"test": "echo \"PASS: no tests are being run\" && exit 0"
+	},
+	"lint-staged": {
+		"**/*": "prettier --write \"./**/*.{js,json}\" --ignore-unknown"
+	},
+	"exports": {
+		".": "./exports.js"
+	},
+	"dependencies": {
+		"chalk": "^4.1.2",
+		"cli-alerts": "^1.2.2",
+		"cli-meow-help": "^3.1.0",
+		"cli-welcome": "^2.2.2",
+		"meow": "^9.0.0",
+		"node-fetch": "^3.3.0"
+	},
+	"devDependencies": {
+		"lint-staged": "^13.1.0",
+		"prettier": "2.8.1"
+	},
+	"main": "lava-console/index.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/JoshSweaterGuy/lava.git"
+	},
+	"bugs": {
+		"url": "https://github.com/JoshSweaterGuy/lava/issues"
+	}
 }

@@ -2,7 +2,6 @@ import meow from 'meow';
 import meowHelp from 'cli-meow-help';
 
 const flags = {
-
 	notes: {
 		type: `string`,
 		alias: `n`,
@@ -30,9 +29,15 @@ const flags = {
 
 const commands = {
 	help: { desc: `Print help info` },
-	run: { desc: `Run lava once, must specify a notes and templates directories (if not initialized)` },
-	watch: { desc: `Runs lava and watches for changes, must specify a notes and templates directories (if not initialized)` },
-	init: { desc: `Initializes lava on directory, optionally specify a notes, templates, objects directories` }
+	run: {
+		desc: `Run lava once, must specify a notes and templates directories (if not initialized)`
+	},
+	watch: {
+		desc: `Runs lava and watches for changes, must specify a notes and templates directories (if not initialized)`
+	},
+	init: {
+		desc: `Initializes lava on directory, optionally specify a notes, templates, objects directories`
+	}
 };
 
 const helpText = meowHelp({

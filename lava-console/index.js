@@ -7,13 +7,13 @@
  * @author Joshua Davis <https://josh-davis.dev>
  */
 
-import lavaRun from "../lava-lang/interpreter/lavaRun.js";
-import help from "./init.js";
-import cli from "./cli.js";
-import lavaWatchCLI from "./inputCLI.js";
-import lavaInit from "../lava-lang/interpreter/lavaInit.js";
-import { existsSync, readFileSync } from "fs";
-// import 
+import lavaRun from '../lava-lang/interpreter/lavaRun.js';
+import help from './init.js';
+import cli from './cli.js';
+import lavaWatchCLI from './inputCLI.js';
+import lavaInit from '../lava-lang/interpreter/lavaInit.js';
+import { existsSync, readFileSync } from 'fs';
+// import
 // import path from "path";
 // import process from "process";
 // import fetch from "node-fetch";
@@ -34,28 +34,34 @@ function run() {
 
 function watch() {
 	console.log(`Watching for changes on...`);
-	console.log(`Notes: ${notes}, Templates: ${templates}, Objects: ${objects ? objects : templates}`);
-	
-	
+	console.log(
+		`Notes: ${notes}, Templates: ${templates}, Objects: ${
+			objects ? objects : templates
+		}`
+	);
+
 	lavaWatchCLI(notes, templates, objects);
 }
 
 function init() {
 	console.log(`Initializing lava on...`);
-	console.log(`Notes: ${notes}, Templates: ${templates}, Objects: ${objects ? objects : templates}`);
+	console.log(
+		`Notes: ${notes}, Templates: ${templates}, Objects: ${
+			objects ? objects : templates
+		}`
+	);
 
 	lavaInit(notes, templates, objects);
 }
 
 function checkflags() {
-	if (notes === undefined || templates === undefined) { 
+	if (notes === undefined || templates === undefined) {
 		if (existsSync(`.lava/lavaPaths.json`)) {
 			const lavaPaths = JSON.parse(readFileSync(`.lava/lavaPaths.json`));
 			notes = lavaPaths.notesDir;
 			templates = lavaPaths.templatesDir;
 			objects = lavaPaths.objectsDir;
-		}
-		else {
+		} else {
 			console.log(`You must specify a notes and templates directory.`);
 			console.log(`or initialize lava on a directory with the command:`);
 			console.log(`lava init -n <notes> -t <templates> -o <objects>`);
@@ -66,16 +72,13 @@ function checkflags() {
 
 (async () => {
 	help();
-	checkflags()
+	checkflags();
 
 	if (input.includes(`version`)) {
 		cli.showVersion(0);
-	}
-	else if (notes && templates) {
+	} else if (notes && templates) {
 		input.includes(`init`) && init();
 		input.includes(`run`) && run();
 		input.includes(`watch`) && watch();
-	
 	}
-
 })();

@@ -1,5 +1,5 @@
 import welcome from 'cli-welcome';
-import pkg from './package.json' assert {type: 'json'};
+import pkg from './package.json' assert { type: 'json' };
 
 // TODO: Change From using cli-welcome to use more custom cli-ux
 // (I dont like the way cli-welcome looks and it doesnt have a lot of options)

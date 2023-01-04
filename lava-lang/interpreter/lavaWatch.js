@@ -28,13 +28,12 @@
 // //     console.log("EXITING WORKER " + exitCode);
 // // })
 
-
 // async function inputCLI() {
 //     const input = readline.createInterface({
 //         input: process.stdin,
 //         output: process.stdout
 //     });
-    
+
 //     return new Promise((resolve, reject) => {
 //         input.question(`> `, text => {
 //             resolve(text)
@@ -61,7 +60,7 @@
 //     runWatch(workerData)
 //     getInput(num)
 
-//     // await forEachFileInDir(templatesDir, async (callfilename, callTemplate) => { 
+//     // await forEachFileInDir(templatesDir, async (callfilename, callTemplate) => {
 //     //     const noExtensionName = path.basename(callfilename).split(".")[0]
 //     //     templates[noExtensionName] = callTemplate
 //     // })
@@ -74,12 +73,12 @@
 //         //         if (templates[input.call] != undefined) {
 //         //             console.log("call ", input.call)
 //         //             return {...input, callTemplate: templates[input.call]}
-    
+
 //         //         }
 //         //         console.log("could not find template for ", input.call)
 //         //         process.exit(1)
 //         //     })
-    
+
 //         //     const output = lavaInject(sentInputs, filename, data)
 //         //     if (output !== data) {
 //         //         console.log("wrote back")
