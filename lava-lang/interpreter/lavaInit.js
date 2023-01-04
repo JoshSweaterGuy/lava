@@ -11,6 +11,8 @@ export default function lavaInit(
 		objectsDir = templatesDir;
 	}
 
+	console.log('Initializing lava...');
+
 	if (notesDir == undefined || templatesDir == undefined) {
 		console.log(
 			'Please specify a notes directory and a templates directory'
