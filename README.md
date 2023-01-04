@@ -1,10 +1,11 @@
 # LAVA MARKUP GENRATION TOOL
 Lava is a markup generation tool built for obsidian
-Version: 0.01
+Version: 0.0.5
 creator: Joshua Davis
 
 **STILL IN VERY EARLY DEVELOPMENT**
 **NOT RECOMMENDED FOR PERSONAL USE**
+
 > open lava-about in obisidian for developer information on the development of LAVA
 
 ```
