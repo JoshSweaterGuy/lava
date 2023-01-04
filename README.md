@@ -8,7 +8,7 @@ creator: Joshua Davis
 > open lava-about in obisidian for developer information on the development of LAVA
 
 ```
-npm link lava-md
+npm i lava-md -g
 ```
 
 ## Inline Lava
