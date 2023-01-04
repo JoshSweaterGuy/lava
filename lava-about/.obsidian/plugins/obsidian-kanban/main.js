@@ -4701,13 +4701,11 @@ var Jl = dt(Le => {
 						/{{\s*(date|time)\s*(([+-]\d+)([yqmwdhs]))?\s*(:.+?)?}}/gi,
 						(f, p, m, v, b, k) => {
 							let T = n(),
-								C = e
-									.clone()
-									.set({
-										hour: T.get('hour'),
-										minute: T.get('minute'),
-										second: T.get('second')
-									});
+								C = e.clone().set({
+									hour: T.get('hour'),
+									minute: T.get('minute'),
+									second: T.get('second')
+								});
 							return (
 								m && C.add(parseInt(v, 10), b),
 								k
@@ -4786,13 +4784,11 @@ var Jl = dt(Le => {
 						/{{\s*(date|time)\s*(([+-]\d+)([yqmwdhs]))?\s*(:.+?)?}}/gi,
 						(c, d, f, p, m, v) => {
 							let b = window.moment(),
-								k = e
-									.clone()
-									.set({
-										hour: b.get('hour'),
-										minute: b.get('minute'),
-										second: b.get('second')
-									});
+								k = e.clone().set({
+									hour: b.get('hour'),
+									minute: b.get('minute'),
+									second: b.get('second')
+								});
 							return (
 								f && k.add(parseInt(p, 10), m),
 								v
@@ -4858,13 +4854,11 @@ var Jl = dt(Le => {
 						/{{\s*(date|time)\s*(([+-]\d+)([yqmwdhs]))?\s*(:.+?)?}}/gi,
 						(c, d, f, p, m, v) => {
 							let b = window.moment(),
-								k = e
-									.clone()
-									.set({
-										hour: b.get('hour'),
-										minute: b.get('minute'),
-										second: b.get('second')
-									});
+								k = e.clone().set({
+									hour: b.get('hour'),
+									minute: b.get('minute'),
+									second: b.get('second')
+								});
 							return (
 								f && k.add(parseInt(p, 10), m),
 								v
@@ -4924,13 +4918,11 @@ var Jl = dt(Le => {
 						/{{\s*(date|time)\s*(([+-]\d+)([yqmwdhs]))?\s*(:.+?)?}}/gi,
 						(c, d, f, p, m, v) => {
 							let b = window.moment(),
-								k = e
-									.clone()
-									.set({
-										hour: b.get('hour'),
-										minute: b.get('minute'),
-										second: b.get('second')
-									});
+								k = e.clone().set({
+									hour: b.get('hour'),
+									minute: b.get('minute'),
+									second: b.get('second')
+								});
 							return (
 								f && k.add(parseInt(p, 10), m),
 								v
@@ -4990,13 +4982,11 @@ var Jl = dt(Le => {
 						/{{\s*(date|time)\s*(([+-]\d+)([yqmwdhs]))?\s*(:.+?)?}}/gi,
 						(c, d, f, p, m, v) => {
 							let b = window.moment(),
-								k = e
-									.clone()
-									.set({
-										hour: b.get('hour'),
-										minute: b.get('minute'),
-										second: b.get('second')
-									});
+								k = e.clone().set({
+									hour: b.get('hour'),
+									minute: b.get('minute'),
+									second: b.get('second')
+								});
 							return (
 								f && k.add(parseInt(p, 10), m),
 								v

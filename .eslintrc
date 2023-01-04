@@ -1,0 +1,26 @@
+{
+	"parser": "@javascript-eslint/parser",
+	"plugins": ["@javascript-eslint"],
+	"extends": ["eslint:recommended", "plugin:@javascript-eslint/recommended"],
+	"globals": {},
+	"env": {
+		"node": true,
+		"es6": true,
+		"mongo": true
+	},
+	"rules": {
+		"strict": [2, "never"],
+		"indent": [
+			2,
+			4,
+			{
+				"SwitchCase": 1,
+				"VariableDeclarator": { "var": 2, "let": 2, "const": 3 }
+			}
+		],
+		"quotes": ["error", "single"],
+		"no-underscore-dangle": [1, { "allow": ["_id"] }],
+		"max-len": ["warn", 150],
+		"complexity": ["warn", 12]
+	}
+}
