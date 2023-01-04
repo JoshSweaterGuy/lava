@@ -23,7 +23,8 @@
   ],
   "homepage": "https://github.com/JoshSweaterGuy/lava#readme",
   "scripts": {
-    "format": "prettier --write \"./**/*.{js,json}\""
+    "format": "prettier --write \"./**/*.{js,json}\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "exports": {
     ".": "./exports.js"
