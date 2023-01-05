@@ -10,10 +10,10 @@ import { readAndInjectToTemplate } from './readAndInjectToTemplate.js';
  * @return {string} new template with injected data
  */
 function outputInlineFromTemplate(template, input) {
-	let inlineTemplateTree = templateLexer(template);
-	// console.log("TREE")
-	// inlineTemplateTree.print()
-	return '\n' + readAndInjectToTemplate(inlineTemplateTree, input, {});
+  const inlineTemplateTree = templateLexer(template);
+  // console.log("TREE")
+  // inlineTemplateTree.print()
+  return `\n${readAndInjectToTemplate(inlineTemplateTree, input, {})}`;
 }
 
 export default outputInlineFromTemplate;

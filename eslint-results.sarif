@@ -1,0 +1,211 @@
+[0m[0m
+[0m[4m/Users/joshuadavis/Desktop/Working Projects/Lava/exports.js[24m[0m
+[0m  [2m1:21[22m  [31merror[39m  Unexpected use of file extension "js" for "./lava-lang/interpreter/lavaRun.js"   [2mimport/extensions[22m[0m
+[0m  [2m2:22[22m  [31merror[39m  Unexpected use of file extension "js" for "./lava-lang/interpreter/lavaInit.js"  [2mimport/extensions[22m[0m
+[0m  [2m3:22[22m  [31merror[39m  Unexpected use of file extension "js" for "./lava-lang/interpreter/lavaCall.js"  [2mimport/extensions[22m[0m
+[0m[0m
+[0m[4m/Users/joshuadavis/Desktop/Working Projects/Lava/lava-console/cli.js[24m[0m
+[0m  [2m1:1[22m  [31merror[39m  'meow' should be listed in the project's dependencies. Run 'npm i -S meow' to add it                    [2mimport/no-extraneous-dependencies[22m[0m
+[0m  [2m2:1[22m  [31merror[39m  'cli-meow-help' should be listed in the project's dependencies. Run 'npm i -S cli-meow-help' to add it  [2mimport/no-extraneous-dependencies[22m[0m
+[0m[0m
+[0m[4m/Users/joshuadavis/Desktop/Working Projects/Lava/lava-console/index.js[24m[0m
+[0m  [2m11:21[22m  [31merror[39m    Unexpected use of file extension "js" for "../lava-lang/interpreter/lavaRun.js"   [2mimport/extensions[22m[0m
+[0m  [2m12:18[22m  [31merror[39m    Unexpected use of file extension "js" for "./init.js"                             [2mimport/extensions[22m[0m
+[0m  [2m12:18[22m  [31merror[39m    Parse errors in imported module './init.js': Unexpected token assert (2:34)       [2mimport/no-named-as-default[22m[0m
+[0m  [2m12:18[22m  [31merror[39m    Parse errors in imported module './init.js': Unexpected token assert (2:34)       [2mimport/no-named-as-default-member[22m[0m
+[0m  [2m13:17[22m  [31merror[39m    Unexpected use of file extension "js" for "./cli.js"                              [2mimport/extensions[22m[0m
+[0m  [2m14:26[22m  [31merror[39m    Unexpected use of file extension "js" for "./inputCLI.js"                         [2mimport/extensions[22m[0m
+[0m  [2m15:22[22m  [31merror[39m    Unexpected use of file extension "js" for "../lava-lang/interpreter/lavaInit.js"  [2mimport/extensions[22m[0m
+[0m  [2m31:3[22m   [33mwarning[39m  Unexpected console statement                                                      [2mno-console[22m[0m
+[0m  [2m36:3[22m   [33mwarning[39m  Unexpected console statement                                                      [2mno-console[22m[0m
+[0m  [2m37:3[22m   [33mwarning[39m  Unexpected console statement                                                      [2mno-console[22m[0m
+[0m  [2m45:3[22m   [33mwarning[39m  Unexpected console statement                                                      [2mno-console[22m[0m
+[0m  [2m46:3[22m   [33mwarning[39m  Unexpected console statement                                                      [2mno-console[22m[0m
+[0m  [2m61:7[22m   [33mwarning[39m  Unexpected console statement                                                      [2mno-console[22m[0m
+[0m  [2m62:7[22m   [33mwarning[39m  Unexpected console statement                                                      [2mno-console[22m[0m
+[0m  [2m63:7[22m   [33mwarning[39m  Unexpected console statement                                                      [2mno-console[22m[0m
+[0m  [2m75:5[22m   [31merror[39m    Expected an assignment or function call and instead saw an expression             [2mno-unused-expressions[22m[0m
+[0m  [2m76:5[22m   [31merror[39m    Expected an assignment or function call and instead saw an expression             [2mno-unused-expressions[22m[0m
+[0m  [2m77:5[22m   [31merror[39m    Expected an assignment or function call and instead saw an expression             [2mno-unused-expressions[22m[0m
+[0m[0m
+[0m[4m/Users/joshuadavis/Desktop/Working Projects/Lava/lava-console/init.js[24m[0m
+[0m  [2m2:34[22m  [31merror[39m  Parsing error: Unexpected token assert[0m
+[0m[0m
+[0m[4m/Users/joshuadavis/Desktop/Working Projects/Lava/lava-console/inputCLI.js[24m[0m
+[0m   [2m5:22[22m  [31merror[39m  Unexpected use of file extension "js" for "../lava-lang/interpreter/lavaCall.js"  [2mimport/extensions[22m[0m
+[0m   [2m6:31[22m  [31merror[39m  Unexpected use of file extension "js" for "../lava-lang/interpreter/lavaRun.js"   [2mimport/extensions[22m[0m
+[0m   [2m8:7[22m   [31merror[39m  Unexpected dangling '_' in '__filename'                                           [2mno-underscore-dangle[22m[0m
+[0m   [2m9:7[22m   [31merror[39m  Unexpected dangling '_' in '__dirname'                                            [2mno-underscore-dangle[22m[0m
+[0m  [2m31:32[22m  [31merror[39m  'reject' is defined but never used                                                [2mno-unused-vars[22m[0m
+[0m  [2m41:13[22m  [31merror[39m  Expected '===' and instead saw '=='                                               [2meqeqeq[22m[0m
+[0m  [2m44:13[22m  [31merror[39m  Expected '!==' and instead saw '!='                                               [2meqeqeq[22m[0m
+[0m[0m
+[0m[4m/Users/joshuadavis/Desktop/Working Projects/Lava/lava-console/watchCLIWorker.js[24m[0m
+[0m  [2m2:21[22m  [31merror[39m  Unexpected use of file extension "js" for "../lava-lang/interpreter/lavaRun.js"  [2mimport/extensions[22m[0m
+[0m[0m
+[0m[4m/Users/joshuadavis/Desktop/Working Projects/Lava/lava-lang/inlineLogic/parseInlineLavaCommand.js[24m[0m
+[0m   [2m2:3[22m   [31merror[39m  'readdir' is defined but never used                                                                                                                                        [2mno-unused-vars[22m[0m
+[0m   [2m2:12[22m  [31merror[39m  'stat' is defined but never used                                                                                                                                           [2mno-unused-vars[22m[0m
+[0m   [2m2:18[22m  [31merror[39m  'readFile' is defined but never used                                                                                                                                       [2mno-unused-vars[22m[0m
+[0m   [2m2:28[22m  [31merror[39m  'writeFile' is defined but never used                                                                                                                                      [2mno-unused-vars[22m[0m
+[0m   [2m5:10[22m  [31merror[39m  'emptyLavaInput' is defined but never used                                                                                                                                 [2mno-unused-vars[22m[0m
+[0m   [2m5:47[22m  [31merror[39m  Unexpected use of file extension "js" for "../makeLavaInput.js"                                                                                                            [2mimport/extensions[22m[0m
+[0m   [2m6:52[22m  [31merror[39m  Unexpected use of file extension "js" for "../lavaLangHelpers.js"                                                                                                          [2mimport/extensions[22m[0m
+[0m  [2m29:53[22m  [31merror[39m  Unary operator '--' used                                                                                                                                                   [2mno-plusplus[22m[0m
+[0m  [2m46:17[22m  [31merror[39m  'jsonParse' was used before it was defined                                                                                                                                 [2mno-use-before-define[22m[0m
+[0m  [2m51:53[22m  [31merror[39m  Unary operator '--' used                                                                                                                                                   [2mno-plusplus[22m[0m
+[0m  [2m78:3[22m   [31merror[39m  iterators/generators require regenerator-runtime, which is too heavyweight for this guide to allow them. Separately, loops should be avoided in favor of array iterations  [2mno-restricted-syntax[22m[0m
+[0m  [2m80:7[22m   [31merror[39m  Unexpected use of continue statement                                                                                                                                       [2mno-continue[22m[0m
+[0m[0m
+[0m[4m/Users/joshuadavis/Desktop/Working Projects/Lava/lava-lang/inlineLogic/parseNote.js[24m[0m
+[0m   [2m2:3[22m   [31merror[39m  'forEachInStringByN' is defined but never used                           [2mno-unused-vars[22m[0m
+[0m   [2m4:8[22m   [31merror[39m  Unexpected use of file extension "js" for "../lavaLangHelpers.js"        [2mimport/extensions[22m[0m
+[0m   [2m5:36[22m  [31merror[39m  Unexpected use of file extension "js" for "./parseInlineLavaCommand.js"  [2mimport/extensions[22m[0m
+[0m   [2m6:28[22m  [31merror[39m  Unexpected use of file extension "js" for "../constants.js"              [2mimport/extensions[22m[0m
+[0m  [2m15:9[22m   [31merror[39m  'lavaInputs' is assigned a value but never used                          [2mno-unused-vars[22m[0m
+[0m  [2m16:9[22m   [31merror[39m  'didFindInput' is assigned a value but never used                        [2mno-unused-vars[22m[0m
+[0m[0m
+[0m[4m/Users/joshuadavis/Desktop/Working Projects/Lava/lava-lang/interpreter/lavaCall.js[24m[0m
+[0m   [2m1:8[22m   [31merror[39m    'path' is defined but never used                                            [2mno-unused-vars[22m[0m
+[0m   [2m2:10[22m  [31merror[39m    'forEachFileInDir' is defined but never used                                [2mno-unused-vars[22m[0m
+[0m   [2m2:28[22m  [31merror[39m    'writeBack' is defined but never used                                       [2mno-unused-vars[22m[0m
+[0m   [2m2:45[22m  [31merror[39m    Unexpected use of file extension "js" for "../lavaLangHelpers.js"           [2mimport/extensions[22m[0m
+[0m   [2m3:8[22m   [31merror[39m    'parseNote' is defined but never used                                       [2mno-unused-vars[22m[0m
+[0m   [2m3:23[22m  [31merror[39m    Unexpected use of file extension "js" for "../inlineLogic/parseNote.js"     [2mimport/extensions[22m[0m
+[0m   [2m4:8[22m   [31merror[39m    'lavaInject' is defined but never used                                      [2mno-unused-vars[22m[0m
+[0m   [2m4:24[22m  [31merror[39m    Unexpected use of file extension "js" for "../templateLogic/lavaInject.js"  [2mimport/extensions[22m[0m
+[0m   [2m7:27[22m  [31merror[39m    Expected '===' and instead saw '=='                                         [2meqeqeq[22m[0m
+[0m   [2m8:5[22m   [33mwarning[39m  Unexpected console statement                                                [2mno-console[22m[0m
+[0m  [2m12:3[22m   [33mwarning[39m  Unexpected console statement                                                [2mno-console[22m[0m
+[0m[0m
+[0m[4m/Users/joshuadavis/Desktop/Working Projects/Lava/lava-lang/interpreter/lavaInit.js[24m[0m
+[0m  [2m10:18[22m  [31merror[39m    Expected '===' and instead saw '=='            [2meqeqeq[22m[0m
+[0m  [2m11:5[22m   [31merror[39m    Assignment to function parameter 'objectsDir'  [2mno-param-reassign[22m[0m
+[0m  [2m14:3[22m   [33mwarning[39m  Unexpected console statement                   [2mno-console[22m[0m
+[0m  [2m16:16[22m  [31merror[39m    Expected '===' and instead saw '=='            [2meqeqeq[22m[0m
+[0m  [2m16:45[22m  [31merror[39m    Expected '===' and instead saw '=='            [2meqeqeq[22m[0m
+[0m  [2m17:5[22m   [33mwarning[39m  Unexpected console statement                   [2mno-console[22m[0m
+[0m  [2m30:9[22m   [33mwarning[39m  Unexpected console statement                   [2mno-console[22m[0m
+[0m[0m
+[0m[4m/Users/joshuadavis/Desktop/Working Projects/Lava/lava-lang/interpreter/lavaRun.js[24m[0m
+[0m   [2m2:45[22m  [31merror[39m    Unexpected use of file extension "js" for "../lavaLangHelpers.js"                  [2mimport/extensions[22m[0m
+[0m   [2m3:23[22m  [31merror[39m    Unexpected use of file extension "js" for "../inlineLogic/parseNote.js"            [2mimport/extensions[22m[0m
+[0m   [2m4:24[22m  [31merror[39m    Unexpected use of file extension "js" for "../templateLogic/lavaInject.js"         [2mimport/extensions[22m[0m
+[0m  [2m11:27[22m  [31merror[39m    'grabTemplates' was used before it was defined                                     [2mno-use-before-define[22m[0m
+[0m  [2m12:18[22m  [31merror[39m    Expected '===' and instead saw '=='                                                [2meqeqeq[22m[0m
+[0m  [2m13:5[22m   [31merror[39m    Assignment to function parameter 'objectsDir'                                      [2mno-param-reassign[22m[0m
+[0m  [2m18:47[22m  [31merror[39m    Array.prototype.map() expects a value to be returned at the end of arrow function  [2marray-callback-return[22m[0m
+[0m  [2m18:47[22m  [31merror[39m    Expected to return a value at the end of arrow function                            [2mconsistent-return[22m[0m
+[0m  [2m19:22[22m  [31merror[39m    Expected '===' and instead saw '=='                                                [2meqeqeq[22m[0m
+[0m  [2m24:33[22m  [31merror[39m    Expected '!==' and instead saw '!='                                                [2meqeqeq[22m[0m
+[0m  [2m28:7[22m   [33mwarning[39m  Unexpected console statement                                                       [2mno-console[22m[0m
+[0m[0m
+[0m[4m/Users/joshuadavis/Desktop/Working Projects/Lava/lava-lang/interpreter/lavaWatch.js[24m[0m
+[0m  [2m10:1[22m  [31merror[39m  This line has a length of 113. Maximum allowed is 100  [2mmax-len[22m[0m
+[0m  [2m20:1[22m  [31merror[39m  This line has a length of 107. Maximum allowed is 100  [2mmax-len[22m[0m
+[0m[0m
+[0m[4m/Users/joshuadavis/Desktop/Working Projects/Lava/lava-lang/lavaLangHelpers.js[24m[0m
+[0m   [2m1:8[22m   [31merror[39m    'fs' is defined but never used                                                                                                                                             [2mno-unused-vars[22m[0m
+[0m   [2m6:8[22m   [31merror[39m    'assert' is defined but never used                                                                                                                                         [2mno-unused-vars[22m[0m
+[0m   [2m7:10[22m  [31merror[39m    'exit' is defined but never used                                                                                                                                           [2mno-unused-vars[22m[0m
+[0m  [2m11:5[22m   [33mwarning[39m  Unexpected console statement                                                                                                                                               [2mno-console[22m[0m
+[0m  [2m17:5[22m   [33mwarning[39m  Unexpected console statement                                                                                                                                               [2mno-console[22m[0m
+[0m  [2m20:3[22m   [31merror[39m    iterators/generators require regenerator-runtime, which is too heavyweight for this guide to allow them. Separately, loops should be avoided in favor of array iterations  [2mno-restricted-syntax[22m[0m
+[0m  [2m23:7[22m   [31merror[39m    Unexpected use of continue statement                                                                                                                                       [2mno-continue[22m[0m
+[0m  [2m27:22[22m  [31merror[39m    Unexpected `await` inside a loop                                                                                                                                           [2mno-await-in-loop[22m[0m
+[0m  [2m28:7[22m   [33mwarning[39m  Unexpected console statement                                                                                                                                               [2mno-console[22m[0m
+[0m  [2m32:20[22m  [31merror[39m    Unexpected `await` inside a loop                                                                                                                                           [2mno-await-in-loop[22m[0m
+[0m  [2m33:9[22m   [33mwarning[39m  Unexpected console statement                                                                                                                                               [2mno-console[22m[0m
+[0m  [2m45:42[22m  [31merror[39m    Unary operator '++' used                                                                                                                                                   [2mno-plusplus[22m[0m
+[0m  [2m64:1[22m   [31merror[39m    This line has a length of 106. Maximum allowed is 100                                                                                                                      [2mmax-len[22m[0m
+[0m  [2m66:1[22m   [31merror[39m    This line has a length of 102. Maximum allowed is 100                                                                                                                      [2mmax-len[22m[0m
+[0m  [2m68:1[22m   [31merror[39m    This line has a length of 134. Maximum allowed is 100                                                                                                                      [2mmax-len[22m[0m
+[0m  [2m69:1[22m   [31merror[39m    This line has a length of 129. Maximum allowed is 100                                                                                                                      [2mmax-len[22m[0m
+[0m  [2m77:3[22m   [31merror[39m    'keepStartStopStrings' is assigned a value but never used                                                                                                                  [2mno-unused-vars[22m[0m
+[0m  [2m92:9[22m   [31merror[39m    Unary operator '--' used                                                                                                                                                   [2mno-plusplus[22m[0m
+[0m  [2m96:7[22m   [31merror[39m    iterators/generators require regenerator-runtime, which is too heavyweight for this guide to allow them. Separately, loops should be avoided in favor of array iterations  [2mno-restricted-syntax[22m[0m
+[0m[0m
+[0m[4m/Users/joshuadavis/Desktop/Working Projects/Lava/lava-lang/templateLogic/changeLifecycleInStringTo.js[24m[0m
+[0m   [2m1:28[22m  [31merror[39m  Unexpected use of file extension "js" for "../constants.js"  [2mimport/extensions[22m[0m
+[0m  [2m10:3[22m   [31merror[39m  Assignment to function parameter 'inlineString'              [2mno-param-reassign[22m[0m
+[0m[0m
+[0m[4m/Users/joshuadavis/Desktop/Working Projects/Lava/lava-lang/templateLogic/evalExclamation.js[24m[0m
+[0m  [2m1:10[22m  [31merror[39m  'evalExclamation' is defined but never used  [2mno-unused-vars[22m[0m
+[0m  [2m2:11[22m  [31merror[39m  'evalExpression' is not defined              [2mno-undef[22m[0m
+[0m[0m
+[0m[4m/Users/joshuadavis/Desktop/Working Projects/Lava/lava-lang/templateLogic/lavaInject.js[24m[0m
+[0m   [2m3:3[22m   [31merror[39m  'writeBack' is defined but never used                                       [2mno-unused-vars[22m[0m
+[0m   [2m4:3[22m   [31merror[39m  'forEachInStringByN' is defined but never used                              [2mno-unused-vars[22m[0m
+[0m   [2m7:8[22m   [31merror[39m  Unexpected use of file extension "js" for "../lavaLangHelpers.js"           [2mimport/extensions[22m[0m
+[0m   [2m8:10[22m  [31merror[39m  'templateLexer' is defined but never used                                   [2mno-unused-vars[22m[0m
+[0m   [2m8:31[22m  [31merror[39m  Unexpected use of file extension "js" for "./templateLexer.js"              [2mimport/extensions[22m[0m
+[0m   [2m9:38[22m  [31merror[39m  Unexpected use of file extension "js" for "./outputInlineFromTemplate.js"   [2mimport/extensions[22m[0m
+[0m  [2m10:28[22m  [31merror[39m  Unexpected use of file extension "js" for "../constants.js"                 [2mimport/extensions[22m[0m
+[0m  [2m11:39[22m  [31merror[39m  Unexpected use of file extension "js" for "./changeLifecycleInStringTo.js"  [2mimport/extensions[22m[0m
+[0m  [2m15:1[22m   [31merror[39m  This line has a length of 125. Maximum allowed is 100                       [2mmax-len[22m[0m
+[0m  [2m29:34[22m  [31merror[39m  Expected '===' and instead saw '=='                                         [2meqeqeq[22m[0m
+[0m  [2m31:42[22m  [31merror[39m  Unary operator '--' used                                                    [2mno-plusplus[22m[0m
+[0m  [2m33:7[22m   [31merror[39m  Unexpected use of continue statement                                        [2mno-continue[22m[0m
+[0m  [2m37:7[22m   [31merror[39m  Assignment to property of function parameter 'input'                        [2mno-param-reassign[22m[0m
+[0m  [2m38:7[22m   [31merror[39m  Unexpected use of continue statement                                        [2mno-continue[22m[0m
+[0m[0m
+[0m[4m/Users/joshuadavis/Desktop/Working Projects/Lava/lava-lang/templateLogic/outputInlineFromTemplate.js[24m[0m
+[0m  [2m1:31[22m  [31merror[39m  Unexpected use of file extension "js" for "./templateLexer.js"            [2mimport/extensions[22m[0m
+[0m  [2m2:41[22m  [31merror[39m  Unexpected use of file extension "js" for "./readAndInjectToTemplate.js"  [2mimport/extensions[22m[0m
+[0m[0m
+[0m[4m/Users/joshuadavis/Desktop/Working Projects/Lava/lava-lang/templateLogic/readAndInjectToTemplate.js[24m[0m
+[0m   [2m11:55[22m  [31merror[39m    Unary operator '--' used                                                                                                                                                   [2mno-plusplus[22m[0m
+[0m   [2m13:1[22m   [31merror[39m    This line has a length of 111. Maximum allowed is 100                                                                                                                      [2mmax-len[22m[0m
+[0m   [2m35:23[22m  [31merror[39m    'convertLavaKeyToValue' was used before it was defined                                                                                                                     [2mno-use-before-define[22m[0m
+[0m   [2m43:23[22m  [31merror[39m    'convertLavaKeyToValue' was used before it was defined                                                                                                                     [2mno-use-before-define[22m[0m
+[0m   [2m46:9[22m   [31merror[39m    iterators/generators require regenerator-runtime, which is too heavyweight for this guide to allow them. Separately, loops should be avoided in favor of array iterations  [2mno-restricted-syntax[22m[0m
+[0m   [2m59:32[22m  [31merror[39m    'calculateConditional' was used before it was defined                                                                                                                      [2mno-use-before-define[22m[0m
+[0m   [2m76:23[22m  [31merror[39m    Expected '===' and instead saw '=='                                                                                                                                        [2meqeqeq[22m[0m
+[0m   [2m77:23[22m  [31merror[39m    eval can be harmful                                                                                                                                                        [2mno-eval[22m[0m
+[0m   [2m93:10[22m  [31merror[39m    Expected to return a value at the end of function 'calculateConditional'                                                                                                   [2mconsistent-return[22m[0m
+[0m   [2m96:17[22m  [31merror[39m    'convertLavaKeyToValue' was used before it was defined                                                                                                                     [2mno-use-before-define[22m[0m
+[0m   [2m97:18[22m  [31merror[39m    'convertLavaKeyToValue' was used before it was defined                                                                                                                     [2mno-use-before-define[22m[0m
+[0m  [2m129:5[22m   [31merror[39m    iterators/generators require regenerator-runtime, which is too heavyweight for this guide to allow them. Separately, loops should be avoided in favor of array iterations  [2mno-restricted-syntax[22m[0m
+[0m  [2m136:3[22m   [31merror[39m    iterators/generators require regenerator-runtime, which is too heavyweight for this guide to allow them. Separately, loops should be avoided in favor of array iterations  [2mno-restricted-syntax[22m[0m
+[0m  [2m142:3[22m   [31merror[39m    Unreachable code                                                                                                                                                           [2mno-unreachable[22m[0m
+[0m  [2m143:5[22m   [33mwarning[39m  Unexpected console statement                                                                                                                                               [2mno-console[22m[0m
+[0m[0m
+[0m[4m/Users/joshuadavis/Desktop/Working Projects/Lava/lava-lang/templateLogic/templateLexer.js[24m[0m
+[0m  [2m14:5[22m   [33mwarning[39m  Unexpected console statement                                                                                                                                               [2mno-console[22m[0m
+[0m  [2m15:5[22m   [31merror[39m    iterators/generators require regenerator-runtime, which is too heavyweight for this guide to allow them. Separately, loops should be avoided in favor of array iterations  [2mno-restricted-syntax[22m[0m
+[0m  [2m25:1[22m   [31merror[39m    This line has a length of 102. Maximum allowed is 100                                                                                                                      [2mmax-len[22m[0m
+[0m  [2m26:1[22m   [31merror[39m    This line has a length of 118. Maximum allowed is 100                                                                                                                      [2mmax-len[22m[0m
+[0m  [2m27:1[22m   [31merror[39m    This line has a length of 129. Maximum allowed is 100                                                                                                                      [2mmax-len[22m[0m
+[0m  [2m59:67[22m  [31merror[39m    Unary operator '++' used                                                                                                                                                   [2mno-plusplus[22m[0m
+[0m  [2m62:5[22m   [31merror[39m    iterators/generators require regenerator-runtime, which is too heavyweight for this guide to allow them. Separately, loops should be avoided in favor of array iterations  [2mno-restricted-syntax[22m[0m
+[0m  [2m78:11[22m  [31merror[39m    'exit' is not defined                                                                                                                                                      [2mno-undef[22m[0m
+[0m  [2m81:15[22m  [31merror[39m    Identifier 'my_str' is not in camel case                                                                                                                                   [2mcamelcase[22m[0m
+[0m  [2m82:26[22m  [31merror[39m    Identifier 'my_str' is not in camel case                                                                                                                                   [2mcamelcase[22m[0m
+[0m  [2m86:23[22m  [31merror[39m    Identifier 'my_str' is not in camel case                                                                                                                                   [2mcamelcase[22m[0m
+[0m  [2m87:23[22m  [31merror[39m    Identifier 'my_str' is not in camel case                                                                                                                                   [2mcamelcase[22m[0m
+[0m  [2m87:54[22m  [31merror[39m    Identifier 'my_str' is not in camel case                                                                                                                                   [2mcamelcase[22m[0m
+[0m  [2m89:23[22m  [31merror[39m    Identifier 'my_str' is not in camel case                                                                                                                                   [2mcamelcase[22m[0m
+[0m[0m
+[0m[4m/Users/joshuadavis/Desktop/Working Projects/Lava/lava-tests/index.js[24m[0m
+[0m  [2m4:22[22m  [31merror[39m  Unexpected use of file extension "js" for "./runTests.js"  [2mimport/extensions[22m[0m
+[0m[0m
+[0m[4m/Users/joshuadavis/Desktop/Working Projects/Lava/lava-tests/runTests.js[24m[0m
+[0m   [2m1:19[22m  [31merror[39m    Unexpected use of file extension "js" for "./tests/basic.js"  [2mimport/extensions[22m[0m
+[0m   [2m4:3[22m   [33mwarning[39m  Unexpected console statement                                  [2mno-console[22m[0m
+[0m   [2m5:9[22m   [31merror[39m    'success' is assigned a value but never used                  [2mno-unused-vars[22m[0m
+[0m   [2m6:9[22m   [31merror[39m    'testNumber' is assigned a value but never used               [2mno-unused-vars[22m[0m
+[0m   [2m9:10[22m  [31merror[39m    'total' is assigned a value but never used                    [2mno-unused-vars[22m[0m
+[0m   [2m9:17[22m  [31merror[39m    'successful' is assigned a value but never used               [2mno-unused-vars[22m[0m
+[0m  [2m16:17[22m  [31merror[39m    Expected '!==' and instead saw '!='                           [2meqeqeq[22m[0m
+[0m  [2m17:5[22m   [33mwarning[39m  Unexpected console statement                                  [2mno-console[22m[0m
+[0m  [2m20:20[22m  [31merror[39m    Expected '!==' and instead saw '!='                           [2meqeqeq[22m[0m
+[0m  [2m21:5[22m   [33mwarning[39m  Unexpected console statement                                  [2mno-console[22m[0m
+[0m  [2m23:5[22m   [33mwarning[39m  Unexpected console statement                                  [2mno-console[22m[0m
+[0m  [2m26:3[22m   [33mwarning[39m  Unexpected console statement                                  [2mno-console[22m[0m
+[0m[0m
+[0m[4m/Users/joshuadavis/Desktop/Working Projects/Lava/lava-tests/tests/basic.js[24m[0m
+[0m  [2m1:37[22m  [31merror[39m  Unable to resolve path to module '../../lava-console/filterAndExecuteCommand.js'           [2mimport/no-unresolved[22m[0m
+[0m  [2m1:37[22m  [31merror[39m  Unexpected use of file extension "js" for "../../lava-console/filterAndExecuteCommand.js"  [2mimport/extensions[22m[0m
+[0m[0m
+[0m[31m[1m✖ 164 problems (139 errors, 25 warnings)[22m[39m[0m
+[0m[31m[1m[22m[39m[0m

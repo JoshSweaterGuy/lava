@@ -1,9 +1,9 @@
 function makeLavaInput(call, params, lifecycle) {
-	return {
-		call: call,
-		params: params,
-		lifecycle: lifecycle
-	};
+  return {
+    call,
+    params,
+    lifecycle,
+  };
 }
 
 const emptyLavaInput = () => makeLavaInput(undefined, undefined, undefined);
