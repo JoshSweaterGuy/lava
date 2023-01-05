@@ -5,7 +5,7 @@ module.exports = {
   },
   extends: 'airbnb-base',
   overrides: [],
-
+  ignorePatterns: ['lava-obsidian'],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
