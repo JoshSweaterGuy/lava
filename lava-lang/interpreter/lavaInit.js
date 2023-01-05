@@ -1,30 +1,33 @@
-import { writeFileSync, mkdir, existsSync } from 'fs'
+import { writeFileSync, mkdir, existsSync } from 'fs';
 
-// store in a hidden file lavaPaths.json in the local directory called .lava 
+// store in a hidden file lavaPaths.json in the local directory called .lava
 // lavaPaths.json will contain the paths to the notesDir, templatesDir, and objectsDir
 export default function lavaInit(notesDir, templatesDir, objectsDir = undefined) {
-    if (objectsDir == undefined) { objectsDir = templatesDir }
+  if (objectsDir == undefined) {
+    objectsDir = templatesDir;
+  }
 
-    if (notesDir == undefined || templatesDir == undefined) { 
-        console.log("Please specify a notes directory and a templates directory")
-        process.exit(1)
-    }
+  console.log('Initializing lava...');
 
-    let lavaPaths = {
-        notesDir: notesDir,
-        templatesDir: templatesDir,
-        objectsDir: objectsDir
-    }
+  if (notesDir == undefined || templatesDir == undefined) {
+    console.log('Please specify a notes directory and a templates directory');
+    process.exit(1);
+  }
 
-    if (!existsSync(".lava")) { 
-        mkdir(".lava", (err) => {
-            if (err) {
-                console.log("Error creating .lava directory")
-                process.exit(1)
-            }
-        })
-    }
+  const lavaPaths = {
+    notesDir,
+    templatesDir,
+    objectsDir,
+  };
 
-    writeFileSync(".lava/lavaPaths.json", JSON.stringify(lavaPaths))
+  if (!existsSync('.lava')) {
+    mkdir('.lava', err => {
+      if (err) {
+        console.log('Error creating .lava directory');
+        process.exit(1);
+      }
+    });
+  }
 
+  writeFileSync('.lava/lavaPaths.json', JSON.stringify(lavaPaths));
 }

@@ -4,10 +4,11 @@
 name: Node.js Package
 
 on:
-  # release:
-  #   types: [created]
-  push:
-    branches: [ "master" ]
+  # long term only publish on release
+  release:
+    types: [published]
+  # push:
+  #   branches: [ "master" ]
 
 jobs:
   build:
