@@ -29,23 +29,19 @@ let { notes, templates, objects } = flags;
 
 function run() {
   console.log('Running lava...');
-  lavaRun(notes, templates);
+  lavaRun(notes, templates, objects);
 }
 
 function watch() {
   console.log('Watching for changes on...');
-  console.log(
-    `Notes: ${notes}, Templates: ${templates}, Objects: ${objects || templates}`
-  );
+  console.log(`Notes: ${notes}, Templates: ${templates}, Objects: ${objects || templates}`);
 
   lavaWatchCLI(notes, templates, objects);
 }
 
 function init() {
   console.log('Initializing lava on...');
-  console.log(
-    `Notes: ${notes}, Templates: ${templates}, Objects: ${objects || templates}`
-  );
+  console.log(`Notes: ${notes}, Templates: ${templates}, Objects: ${objects || templates}`);
 
   lavaInit(notes, templates, objects);
 }

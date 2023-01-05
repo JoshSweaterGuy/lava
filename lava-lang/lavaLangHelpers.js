@@ -95,10 +95,8 @@ function getLocationOfStartStopWithinString(
         if (inComment) {
           if (substring.includes(cmt[1])) {
             inComment = false;
-            subStringLocations[subStringLocations.length - 1].endWith =
-              index + stopString.length;
-            subStringLocations[subStringLocations.length - 1].endWithout =
-              index;
+            subStringLocations[subStringLocations.length - 1].endWith = index + stopString.length;
+            subStringLocations[subStringLocations.length - 1].endWithout = index;
             blocked = substring.indexOf(cmt[1]) + cmt[1].length - 1;
           }
           isHaulted = true;
@@ -120,8 +118,7 @@ function getLocationOfStartStopWithinString(
         if (
           saftyCheckStrings.length > 0 &&
           saftyCheckStrings.every(
-            saftyString =>
-              saftyString === substring.substring(0, saftyString.length)
+            saftyString => saftyString === substring.substring(0, saftyString.length)
           ) &&
           withinStartString
         ) {
@@ -142,8 +139,7 @@ function getLocationOfStartStopWithinString(
           const blkEndAmt = substring.indexOf(stopString);
           const newIdx = index + blkEndAmt;
 
-          subStringLocations[subStringLocations.length - 1].endWith =
-            newIdx + stopString.length;
+          subStringLocations[subStringLocations.length - 1].endWith = newIdx + stopString.length;
           subStringLocations[subStringLocations.length - 1].endWithout = newIdx;
           withinStartString = false;
           blocked = blkEndAmt + stopString.length - 1;

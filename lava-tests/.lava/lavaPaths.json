@@ -1,5 +1,5 @@
 {
   "notesDir": "./notes",
   "templatesDir": "./templates",
-  "objectsDir": "./templates"
+  "objectsDir": "./objects"
 }

@@ -39,32 +39,23 @@ function lavaInject(input, filename, fileData) {
     }
 
     const endTag = `\n${LAVA_CONSTANTS.inlineLava.startInlineLava} end ${LAVA_CONSTANTS.inlineLava.endInlineLava}\n`;
-    const dataToInject =
-      outputInlineFromTemplate(input[i].callTemplate, input[i]) + endTag;
+    const dataToInject = outputInlineFromTemplate(input[i].callTemplate, input[i]) + endTag;
 
     if (input[i].end !== undefined) {
-      output =
-        output.substring(0, dataToLineNumber[i].endWith) +
-        dataToInject +
-        output.substring(input[i].end + 1);
+      output = output.substring(0, dataToLineNumber[i].endWith);
+      dataToInject + output.substring(input[i].end + 1);
     } else {
-      output =
-        output.substring(0, dataToLineNumber[i].endWith) +
-        dataToInject +
-        output.substring(dataToLineNumber[i].endWith);
+      output = output.substring(0, dataToLineNumber[i].endWith);
+      dataToInject + output.substring(dataToLineNumber[i].endWith);
     }
 
     if (
       input[i].call !== 'end' &&
       (input[i].lifecycle === undefined || input[i].lifecycle === 'pre-render')
     ) {
-      output =
-        output.substring(0, dataToLineNumber[i].startWith) +
-        changeLifecycleInStringTo(
-          getStringWith(output, dataToLineNumber[i]),
-          'rendered'
-        ) +
-        output.substring(dataToLineNumber[i].endWith);
+      output = output.substring(0, dataToLineNumber[i].startWith);
+      changeLifecycleInStringTo(getStringWith(output, dataToLineNumber[i]), 'rendered');
+      output.substring(dataToLineNumber[i].endWith);
     }
   }
   // console.log(output)

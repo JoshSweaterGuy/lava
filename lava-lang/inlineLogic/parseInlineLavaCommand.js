@@ -25,10 +25,7 @@ function parseInlineLavaCommand(inlineString, objectsPath) {
   if (inlineStripped[0] === '{') {
     paramStart = 0;
     for (let i = inlineStripped.length - 1; i >= 0; i--) {
-      if (
-        i + 1 < inlineStripped.length &&
-        inlineStripped.substring(i, i + 2) === '->'
-      ) {
+      if (i + 1 < inlineStripped.length && inlineStripped.substring(i, i + 2) === '->') {
         paramEnd = i;
         lifecycle = inlineStripped.substring(i + 2);
         reducedInline = reducedInline.substring(0, i);
@@ -41,16 +38,14 @@ function parseInlineLavaCommand(inlineString, objectsPath) {
       }
     }
     const paramsString = inlineStripped.substring(paramStart, paramEnd + 1);
+    // console.log("params STRING\n", paramsString)
     getParams = jsonParse(paramsString, objectsPath);
     command = reducedInline;
   } else {
     getParams = {};
 
     for (let i = inlineStripped.length - 1; i >= 0; i--) {
-      if (
-        i + 1 < inlineStripped.length &&
-        inlineStripped.substring(i, i + 2) === '->'
-      ) {
+      if (i + 1 < inlineStripped.length && inlineStripped.substring(i, i + 2) === '->') {
         paramEnd = i;
         lifecycle = inlineStripped.substring(i + 2);
         reducedInline = reducedInline.substring(0, i);
@@ -64,44 +59,35 @@ function parseInlineLavaCommand(inlineString, objectsPath) {
 }
 
 function jsonParse(str, objectsPath) {
-  const locations = getLocationOfStartStopWithinString(
-    str,
-    '...(',
-    '),',
-    [],
-    [['"', '"']]
-  ); // ['"', "'", ":", "\\", "("]
+  const locations = getLocationOfStartStopWithinString(str, '...(', '),', [], [['"', '"']]); // ['"', "'", ":", "\\", "("]
   let newStr = str;
+
   let additions = {};
   for (const loc of locations.reverse()) {
     if (loc.type === 'COMMENT') {
       continue;
     }
     const subJson = str.substring(loc.startWithout, loc.endWithout);
-    let subValue = ''; // "\"test\": \"test\""
+    let subValue = '';
+
     // TODO: make subjson work for custom paths and auto template path
-    newStr =
-      newStr.substring(0, loc.startWith) +
-      subValue +
-      newStr.substring(loc.endWith, newStr.length);
+    newStr = newStr.substring(0, loc.startWith) + newStr.substring(loc.endWith, newStr.length);
+    subValue + newStr.substring(loc.endWith, newStr.length);
     const newJsonFilePath = path.join(objectsPath, subJson);
     subValue = readFileSync(newJsonFilePath, {
       encoding: 'utf8',
       flag: 'r',
     });
+
     // console.log("NAME:")
     // console.log(newJsonFilePath)
 
-    // console.log("PATH:")
+    // console.log("value:")
     // console.log(subValue)
 
     additions = { ...additions, ...JSON.parse(subValue) };
-
-    // console.log(additions)
   }
 
-  // console.log("NEW JSON")
-  // console.log(newStr)
   return { ...additions, ...JSON.parse(newStr) };
 }
 

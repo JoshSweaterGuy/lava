@@ -12,9 +12,8 @@ function readAndInjectToTemplate(tokenTree, input, localParams) {
     const inline = tokenTree.branches[i];
     // inline.value.value = tokenTree.value.value.substring(inline.value.startWithout, inline.value.endWithout)
     if (inline.value.type === 'COMMENT') {
-      output =
-        output.substring(0, inline.value.startWith) +
-        output.substring(inline.value.endWith);
+      output = output.substring(0, inline.value.startWith);
+      output.substring(inline.value.endWith);
     } else if (inline.value.type === 'EXCLAMATION') {
       const data = inline.value.body.trim();
       const callstr = inline.value.call.trim();
@@ -57,11 +56,7 @@ function readAndInjectToTemplate(tokenTree, input, localParams) {
       } else if (call === 'IF') {
         const condition = callstr.substring(2, callstr.length);
         // TODO: LOGIC FOR BOOLEAN
-        const conditionValue = calculateConditional(
-          input,
-          localParams,
-          condition
-        );
+        const conditionValue = calculateConditional(input, localParams, condition);
 
         if (conditionValue) {
           // TODO: TRIM ONLY ONE TAB SO TABS CAN BE DONE IN IF
@@ -77,18 +72,14 @@ function readAndInjectToTemplate(tokenTree, input, localParams) {
       } else if (call == 'JS') {
         replacement = eval(data.substring(2).replace(/['"`]+/g, ''));
       }
-      output =
-        output.substring(0, inline.value.startWith) +
-        replacement +
-        output.substring(inline.value.endWith);
+      output = output.substring(0, inline.value.startWith);
+      replacement + output.substring(inline.value.endWith);
     }
   }
 
   // FIX THIS PUT LOGIC IN TOKENIZER, fix if none
   if (tokenTree.value.body !== '') {
-    output = output
-      .substring(output.indexOf('{') + 1, output.lastIndexOf('}'))
-      .trim();
+    output = output.substring(output.indexOf('{') + 1, output.lastIndexOf('}')).trim();
   }
   return output;
 }
