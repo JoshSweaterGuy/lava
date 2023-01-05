@@ -6,8 +6,7 @@ function changeLifecycleInStringTo(inlineString, lifecycle) {
   if (inlineString.includes(lifeSymbol)) {
     return inlineString;
   }
-  const startIndex =
-    inlineString.length - 1 - LAVA_CONSTANTS.inlineLava.endInlineLava.length;
+  const startIndex = inlineString.length - 1 - LAVA_CONSTANTS.inlineLava.endInlineLava.length;
   inlineString = `${inlineString.substring(
     0,
     startIndex

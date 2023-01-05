@@ -62,11 +62,7 @@ function templateLexer(template) {
     for (const typestr of [commentstr, exclamstr, commandstr]) {
       if (substring === typestr.start) {
         // index - tokenTree.value.startWith
-        const val = makeTokenObject(
-          index,
-          index - tokenTree.value.globalStart,
-          typestr.name
-        );
+        const val = makeTokenObject(index, index - tokenTree.value.globalStart, typestr.name);
         stack.push([tokenTree, val]);
         tokenTree.add(new TokenTreeNode(val));
         tokenTree = tokenTree.branches.at(-1);

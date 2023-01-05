@@ -2,11 +2,7 @@ import { writeFileSync, mkdir, existsSync } from 'fs';
 
 // store in a hidden file lavaPaths.json in the local directory called .lava
 // lavaPaths.json will contain the paths to the notesDir, templatesDir, and objectsDir
-export default function lavaInit(
-  notesDir,
-  templatesDir,
-  objectsDir = undefined
-) {
+export default function lavaInit(notesDir, templatesDir, objectsDir = undefined) {
   if (objectsDir == undefined) {
     objectsDir = templatesDir;
   }

@@ -1,7 +1,4 @@
-import {
-  forEachInStringByN,
-  getLocationOfStartStopWithinString,
-} from '../lavaLangHelpers.js';
+import { forEachInStringByN, getLocationOfStartStopWithinString } from '../lavaLangHelpers.js';
 import parseInlineLavaCommand from './parseInlineLavaCommand.js';
 import LAVA_CONSTANTS from '../constants.js';
 /**
