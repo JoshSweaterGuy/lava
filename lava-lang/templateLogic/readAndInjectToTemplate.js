@@ -50,7 +50,7 @@ function readAndInjectToTemplate(tokenTree, input, localParams) {
           replacement += `${readAndInjectToTemplate(
             tokenTree.branches[i],
             input,
-            newLocalParams
+            newLocalParams,
           ).trimStart()}\n`;
         }
       } else if (call === 'IF') {
@@ -64,7 +64,7 @@ function readAndInjectToTemplate(tokenTree, input, localParams) {
           replacement = readAndInjectToTemplate(
             tokenTree.branches[i],
             input,
-            localParams
+            localParams,
           ).trimStart();
         }
       } else if (call === 'DATE') {

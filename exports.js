@@ -1,5 +1,5 @@
-import lavaRun from './lava-lang/interpreter/lavaRun.js';
-import lavaInit from './lava-lang/interpreter/lavaInit.js';
-import lavaCall from './lava-lang/interpreter/lavaCall.js';
+import lavaRun from './lava-lang/interpreter/lavaRun';
+import lavaInit from './lava-lang/interpreter/lavaInit';
+import lavaCall from './lava-lang/interpreter/lavaCall';
 
 export { lavaRun, lavaInit, lavaCall };

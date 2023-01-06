@@ -24,8 +24,8 @@
   "homepage": "https://github.com/JoshSweaterGuy/lava#readme",
   "scripts": {
     "format": "prettier --write \"./**/*.{js,json}\"",
-    "lint": "npx eslint . --fix ",
-    "test": "echo \"PASS: no tests are being run\" && exit 0",
+    "lint": "npx eslint .",
+    "test": "mocha \"lava-tests/tests/**/*.js\"",
     "prepare": "husky install"
   },
   "lint-staged": {
@@ -43,6 +43,8 @@
     "node-fetch": "^3.3.0"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.19.1",
+    "@babel/plugin-syntax-import-assertions": "^7.20.0",
     "@microsoft/eslint-formatter-sarif": "^3.0.0",
     "eslint": "^8.31.0",
     "eslint-config-airbnb-base": "^15.0.0",
@@ -53,6 +55,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.0",
+    "mocha": "^10.2.0",
     "prettier": "^2.8.1"
   },
   "main": "lava-console/index.js",

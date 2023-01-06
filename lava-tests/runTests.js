@@ -1,4 +1,4 @@
-import basic from './tests/basic.js';
+import basic from './tests/basic';
 
 export default function runTests() {
   console.log('Running tests suite...');
@@ -13,11 +13,11 @@ export default function runTests() {
   totalTests += values[0];
   successTests += values[1];
 
-  if (values[0] != values[1]) {
+  if (values[0] !== values[1]) {
     console.log('BASIC');
   }
 
-  if (successTests != totalTests) {
+  if (successTests !== totalTests) {
     console.log('FAILED');
   } else {
     console.log('PASSED');

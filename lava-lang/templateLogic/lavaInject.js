@@ -23,7 +23,7 @@ function lavaInject(input, filename, fileData) {
     fileData,
     LAVA_CONSTANTS.inlineLava.startInlineLava,
     LAVA_CONSTANTS.inlineLava.endInlineLava,
-    [LAVA_CONSTANTS.lavaFile.inlineStart, '%%']
+    [LAVA_CONSTANTS.lavaFile.inlineStart, '%%'],
   );
 
   assert(dataToLineNumber.length == input.length);
