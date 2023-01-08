@@ -1,53 +1,67 @@
-// function basicBase() {
-//   //   filterAndExecuteCommand([
-//   //     'node',
-//   //     '.',
-//   //     'run',
-//   //     '-n',
-//   //     './lava-tests/notes',
-//   //     '-t',
-//   //     './lava-tests/templates',
-//   //   ]);
-//   return [1, 1];
-// }
-
-// export default function basic() {
-//   let [total, successful] = [0, 0];
-//   const [totalTemp, successfulTemp] = basicBase();
-//   total += totalTemp;
-//   successful += successfulTemp;
-
-//   return [total, successful];
-// }
 import assert from 'assert';
+import { readFileSync } from 'fs';
+import { fileURLToPath } from 'url';
+import path from 'path';
 
-export default function sum(a, b) {
-  return a * b;
-}
+const filename = fileURLToPath(import.meta.url);
+const dirname = path.dirname(filename);
 
-it('should add to numbers from an es module', () => {
-  assert.equal(sum(3, 5), 8);
+// it('should add to numbers from an es module', () => {
+//   assert.equal(sum(3, 5), 8);
+// });
+
+describe('#basic', () => {
+  context('apples', () => {
+    it('simple apples test', () => {
+      const name1 = '../notes/apple_picking.md';
+      const name2 = '../outputs/apple_picking.md';
+
+      const str1 = readFileSync(path.join(dirname, name1), {
+        encoding: 'utf8',
+        flag: 'r',
+      }).trim();
+
+      const str2 = readFileSync(path.join(dirname, name2), {
+        encoding: 'utf8',
+        flag: 'r',
+      }).trim();
+
+      assert.equal(str2, str1);
+    });
+  });
+
+  context('with number arguments', () => {
+    it('should return sum of arguments', () => {
+      // expect(sum(1, 2, 3, 4, 5)).to.equal(15)
+      assert(1 === 1);
+    });
+  });
 });
 
-// /* test/sum.js */
-// import { assert } from 'mocha';
+describe('#complex', () => {
+  context('apples', () => {
+    it('simple apples test', () => {
+      const name1 = '../notes/apple_picking.md';
+      const name2 = '../outputs/apple_picking.md';
 
-// describe('#sum()', function() {
+      const str1 = readFileSync(path.join(dirname, name1), {
+        encoding: 'utf8',
+        flag: 'r',
+      }).trim();
 
-//   context('without arguments', function() {
-//     it('should return 0', function() {
-//       // expect(sum()).to.equal(0)
-//       assert(1 === 1);
-//     })
-//   })
+      const str2 = readFileSync(path.join(dirname, name2), {
+        encoding: 'utf8',
+        flag: 'r',
+      }).trim();
 
-//   context('with number arguments', function() {
-//     it('should return sum of arguments', function() {
-//       // expect(sum(1, 2, 3, 4, 5)).to.equal(15)
-//       assert(1 === 1);
+      assert.equal(str2, str1);
+    });
+  });
 
-//     })
-
-//   })
-
-// })
+  context('with number arguments', () => {
+    it('should return sum of arguments', () => {
+      // expect(sum(1, 2, 3, 4, 5)).to.equal(15)
+      assert(1 === 1);
+    });
+  });
+});

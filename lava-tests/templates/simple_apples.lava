@@ -14,11 +14,11 @@
 **INCLUDING %%! params.apples !%%**
 
 %%! FOR apple in params.apples {
-    %%! FOR person in params.people {
+%%! FOR person in params.people {
 * PICKING APPLES WITH %%! person !%%
 * %%! person !%% likes %%! apple !%% apples!
 %%! IF params.name == person {
 * %%! params.name !%%'s Name is %%! person !%%!
-        }!%%
-    } !%%
+} !%%
+} !%%
 } !%%
