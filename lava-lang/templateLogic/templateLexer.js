@@ -22,9 +22,15 @@ class TokenTreeNode {
  * tokenize the lava template with lava-input object data
  *
  * @param {string} inputString input template to parse
- * @param {boolean} keepStartStopStrings do you want to keep the start and stop strings in the output?
- * @return {TokenTreeObject} returns a token tree object with the start and end of the substrings of the input string.
- * returns object template {startWithout: {string}, endWithout: {string}, startWith: {string}, endWith: {string}, type: {string}}
+ * @param {boolean} keepStartStopStrings keep the start and stop strings in the output?
+ * @return {TokenTreeObject} a token tree object with the start and end of the substrings of the input string.
+ * returns object template {
+ *  startWithout: {string},
+ *  endWithout: {string},
+ *  startWith: {string},
+ *  endWith: {string},
+ *  type: {string}
+ * }
  */
 function templateLexer(template) {
   const substrSize = 3;
@@ -52,7 +58,7 @@ function templateLexer(template) {
       globalStart: 0,
       // template
     },
-    []
+    [],
   );
   const stack = [];
 
@@ -74,15 +80,15 @@ function templateLexer(template) {
           exit(1);
         }
         // const rgr = /%%![\s]([^{}]*){((?s).*)}[\s]*!%%/
-        const my_str = template.substring(last.globalStart + substrSize, index);
-        const indFirst = my_str.indexOf('{');
+        const myStr = template.substring(last.globalStart + substrSize, index);
+        const indFirst = myStr.indexOf('{');
 
         last.value = template.substring(last.globalStart, index + substrSize);
         if (indFirst !== -1) {
-          last.call = my_str.substring(0, indFirst);
-          last.body = my_str.substring(indFirst + 1, my_str.lastIndexOf('}'));
+          last.call = myStr.substring(0, indFirst);
+          last.body = myStr.substring(indFirst + 1, myStr.lastIndexOf('}'));
         } else {
-          last.call = my_str;
+          last.call = myStr;
           last.body = '';
         }
 

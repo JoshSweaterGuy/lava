@@ -4,7 +4,7 @@ import parseNote from '../inlineLogic/parseNote.js';
 import lavaInject from '../templateLogic/lavaInject.js';
 
 async function lavaCall(templates, callFunc) {
-  if (templates[callFunc] == undefined) {
+  if (templates[callFunc] === undefined) {
     console.log(`"${callFunc}" template does not exist`);
     return;
   }

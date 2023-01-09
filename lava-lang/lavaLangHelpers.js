@@ -5,13 +5,47 @@ import assert from 'assert';
 import { exit } from 'process';
 
 const writeBack = async (filename, data) => {
-  await writeFile(filename, data).catch(err => {
+  await writeFile(filename, data).catch((err) => {
     console.error('File does not exist or write failed', err);
   });
 };
 
+const forEachFileInDirSync = (dir) => {
+  const files = fs.readdirSync(dir, {
+    encoding: 'utf8',
+    flag: 'r',
+  });
+
+  let fdata = [];
+  for (const file of files) {
+    if (file === '.' || file === '..' || file[0] === '.') {
+      continue;
+    }
+    const newDir = path.join(dir, file);
+
+    const fileStat = fs.statSync(newDir, {
+      encoding: 'utf8',
+      flag: 'r',
+    });
+
+    if (fileStat.isFile()) {
+      const data = fs.readFileSync(newDir, {
+        encoding: 'utf8',
+        flag: 'r',
+      });
+
+      // const bytesString = String.fromCharCode(...data);
+      fdata.push({ filename: newDir, data: data });
+    } else if (fileStat.isDirectory()) {
+      fdata += forEachFileInDirSync(newDir, completion);
+    }
+  }
+
+  return fdata;
+};
+
 const forEachFileInDir = async (dir, completion) => {
-  const files = await readdir(dir).catch(err => {
+  const files = await readdir(dir).catch((err) => {
     console.error('Directory does not exist', err);
   });
 
@@ -22,12 +56,12 @@ const forEachFileInDir = async (dir, completion) => {
     }
     const newDir = path.join(dir, file);
 
-    const fileStat = await stat(newDir).catch(err => {
+    const fileStat = await stat(newDir).catch((err) => {
       console.error('Error please try again.', err);
     });
 
     if (fileStat.isFile()) {
-      const data = await readFile(newDir).catch(err => {
+      const data = await readFile(newDir).catch((err) => {
         console.error('Error could not readfile.', err);
       });
       const bytesString = String.fromCharCode(...data);
@@ -72,7 +106,7 @@ function getLocationOfStartStopWithinString(
   stopString,
   saftyCheckStrings = [],
   comments = [],
-  keepStartStopStrings = false
+  keepStartStopStrings = false,
 ) {
   // TODO: safety checks may not check properly
   const subStringLocations = [];
@@ -118,7 +152,7 @@ function getLocationOfStartStopWithinString(
         if (
           saftyCheckStrings.length > 0 &&
           saftyCheckStrings.every(
-            saftyString => saftyString === substring.substring(0, saftyString.length)
+            (saftyString) => saftyString === substring.substring(0, saftyString.length),
           ) &&
           withinStartString
         ) {
@@ -147,7 +181,7 @@ function getLocationOfStartStopWithinString(
       } else if (!inComment) {
         isHaulted = false;
       }
-    }
+    },
   );
 
   if (withinStartString) {
@@ -164,4 +198,5 @@ export {
   getLocationOfStartStopWithinString,
   getStringWith,
   getStringWithout,
+  forEachFileInDirSync,
 };

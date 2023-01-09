@@ -1,8 +1,40 @@
-import { readdir, stat, readFile, writeFile, readFileSync } from 'fs';
+import { readFileSync } from 'fs';
 import path from 'path';
 import { emptyLavaInput, makeLavaInput } from '../makeLavaInput.js';
 import { getLocationOfStartStopWithinString } from '../lavaLangHelpers.js';
-// const fs = require('fs.js');
+
+function jsonParse(str, objectsPath) {
+  const locations = getLocationOfStartStopWithinString(str, '...(', '),', [], [['"', '"']]); // ['"', "'", ":", "\\", "("]
+  let newStr = str;
+
+  let additions = {};
+  for (const loc of locations.reverse()) {
+    if (loc.type === 'COMMENT') {
+      continue;
+    }
+    const subJson = str.substring(loc.startWithout, loc.endWithout);
+    let subValue = '';
+
+    // TODO: make subjson work for custom paths and auto template path
+    newStr = newStr.substring(0, loc.startWith) + newStr.substring(loc.endWith, newStr.length);
+
+    const newJsonFilePath = path.join(objectsPath, subJson);
+    subValue = readFileSync(newJsonFilePath, {
+      encoding: 'utf8',
+      flag: 'r',
+    });
+
+    // console.log("NAME:")
+    // console.log(newJsonFilePath)
+
+    // console.log("value:")
+    // console.log(subValue)
+
+    additions = { ...additions, ...JSON.parse(subValue) };
+  }
+
+  return { ...additions, ...JSON.parse(newStr) };
+}
 
 /**
  * converts inline lava command to lava-input object.
@@ -56,39 +88,6 @@ function parseInlineLavaCommand(inlineString, objectsPath) {
   }
 
   return makeLavaInput(command, getParams, lifecycle);
-}
-
-function jsonParse(str, objectsPath) {
-  const locations = getLocationOfStartStopWithinString(str, '...(', '),', [], [['"', '"']]); // ['"', "'", ":", "\\", "("]
-  let newStr = str;
-
-  let additions = {};
-  for (const loc of locations.reverse()) {
-    if (loc.type === 'COMMENT') {
-      continue;
-    }
-    const subJson = str.substring(loc.startWithout, loc.endWithout);
-    let subValue = '';
-
-    // TODO: make subjson work for custom paths and auto template path
-    newStr = newStr.substring(0, loc.startWith) + newStr.substring(loc.endWith, newStr.length);
-    subValue + newStr.substring(loc.endWith, newStr.length);
-    const newJsonFilePath = path.join(objectsPath, subJson);
-    subValue = readFileSync(newJsonFilePath, {
-      encoding: 'utf8',
-      flag: 'r',
-    });
-
-    // console.log("NAME:")
-    // console.log(newJsonFilePath)
-
-    // console.log("value:")
-    // console.log(subValue)
-
-    additions = { ...additions, ...JSON.parse(subValue) };
-  }
-
-  return { ...additions, ...JSON.parse(newStr) };
 }
 
 export default parseInlineLavaCommand;

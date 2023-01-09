@@ -16,10 +16,10 @@ function parseNote(note, objectsPath) {
     noteContent,
     LAVA_CONSTANTS.inlineLava.startInlineLava,
     LAVA_CONSTANTS.inlineLava.endInlineLava,
-    ['%%']
+    ['%%'],
   )
-    .map(range => noteContent.substring(range.startWithout, range.endWithout))
-    .map(inlineString => parseInlineLavaCommand(inlineString, objectsPath));
+    .map((range) => noteContent.substring(range.startWithout, range.endWithout))
+    .map((inlineString) => parseInlineLavaCommand(inlineString, objectsPath));
 }
 
 export default parseNote;

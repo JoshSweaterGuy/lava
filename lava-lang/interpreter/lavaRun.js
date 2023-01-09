@@ -9,19 +9,20 @@ import lavaInject from '../templateLogic/lavaInject.js';
 // TODO: Create objectsDir funtionality
 async function lavaRun(notesDir, templatesDir, objectsDir = undefined) {
   const templates = await grabTemplates(templatesDir, objectsDir);
-  if (objectsDir == undefined) {
+  if (objectsDir === undefined) {
     objectsDir = templatesDir;
   }
 
   await forEachFileInDir(notesDir, async (filename, data) => {
     const lavaInputs = parseNote(data, objectsDir);
-    const sentInputs = lavaInputs.map(input => {
-      if (input.call == 'end') {
+
+    const sentInputs = lavaInputs.map((input) => {
+      if (input.call === 'end') {
         // console.log("END FOUND")
         return input;
       }
 
-      if (templates[input.call] != undefined) {
+      if (templates[input.call] !== undefined) {
         // console.log("call ", input.call)
         return { ...input, callTemplate: templates[input.call] };
       }
@@ -29,7 +30,10 @@ async function lavaRun(notesDir, templatesDir, objectsDir = undefined) {
       process.exit(1);
     });
 
+    // console.log('lavaInputs', sentInputs)
+
     const output = lavaInject(sentInputs, filename, data);
+
     writeBack(filename, output);
   });
 

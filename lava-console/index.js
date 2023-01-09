@@ -68,8 +68,14 @@ function checkflags() {
   if (input.includes('version')) {
     cli.showVersion(0);
   } else if (notes && templates) {
-    input.includes('init') && init();
-    input.includes('run') && run();
-    input.includes('watch') && watch();
+    if (input.includes('init')) {
+      init();
+    }
+    if (input.includes('run')) {
+      run();
+    }
+    if (input.includes('watch')) {
+      watch();
+    }
   }
 })();

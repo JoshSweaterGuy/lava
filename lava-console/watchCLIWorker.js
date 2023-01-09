@@ -13,5 +13,5 @@ function watchCLI(notesDir, templatesDir, objectsDir) {
 }
 
 parentPort.postMessage(
-  watchCLI(workerData.notesDir, workerData.templatesDir, workerData.objectsDir)
+  watchCLI(workerData.notesDir, workerData.templatesDir, workerData.objectsDir),
 );

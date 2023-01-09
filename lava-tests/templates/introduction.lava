@@ -1,0 +1,4 @@
+I am %%! params.name !%%!
+I am GREAT!
+%%! params.name !%%'s favorite food is blueberry
+%%! params.name !%% eats grapes
