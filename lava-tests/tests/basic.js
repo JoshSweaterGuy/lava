@@ -1,67 +1,47 @@
-import assert from 'assert';
-import { readFileSync } from 'fs';
-import { fileURLToPath } from 'url';
-import path from 'path';
+import createAutoTestSuite from '../createAutoTestSuite.js';
 
-const filename = fileURLToPath(import.meta.url);
-const dirname = path.dirname(filename);
+createAutoTestSuite('basic');
+// import assert from 'assert';
+// import { fileURLToPath } from 'url';
+// import path from 'path';
+// import fs from 'fs';
+// import { forEachFileInDirSync } from '../../lava-lang/lavaLangHelpers.js';
 
-// it('should add to numbers from an es module', () => {
-//   assert.equal(sum(3, 5), 8);
+// import Mocha from 'mocha';
+// import Chai from 'chai';
+
+// const filename = fileURLToPath(import.meta.url);
+// const dirname = path.dirname(filename);
+
+// var Test = Mocha.Test;
+// var expect = Chai.expect;
+// var mochaInstance = new Mocha();
+// var suiteInstance = Mocha.Suite.create(mochaInstance.suite, '#BASIC');
+
+// var filedata = forEachFileInDirSync(path.join(dirname, '..', 'notes', 'basic'))
+
+// filedata.forEach(({ filename, data }) => {
+//   suiteInstance.addTest(new Test(path.parse(filename).base, () => {
+//     const name = path.join(dirname, '..', 'outputs', 'basic', path.parse(filename).base);
+//     const correctData = fs.readFileSync(name, {
+//       encoding: 'utf8',
+//       flag: 'r',
+//     });
+//     const actualData = data;
+
+//     expect(actualData).to.equal(correctData);
+//     // assert.equal(correctData, actualData);
+//   }))
+// })
+
+// var basicRun = mochaInstance.run()
+
+// process.on('exit', (code) => {
+//   process.exit(basicRun.stats.failures > 0)
 // });
 
-describe('#basic', () => {
-  context('apples', () => {
-    it('simple apples test', () => {
-      const name1 = '../notes/apple_picking.md';
-      const name2 = '../outputs/apple_picking.md';
-
-      const str1 = readFileSync(path.join(dirname, name1), {
-        encoding: 'utf8',
-        flag: 'r',
-      }).trim();
-
-      const str2 = readFileSync(path.join(dirname, name2), {
-        encoding: 'utf8',
-        flag: 'r',
-      }).trim();
-
-      assert.equal(str2, str1);
-    });
-  });
-
-  context('with number arguments', () => {
-    it('should return sum of arguments', () => {
-      // expect(sum(1, 2, 3, 4, 5)).to.equal(15)
-      assert(1 === 1);
-    });
-  });
-});
-
-describe('#complex', () => {
-  context('apples', () => {
-    it('simple apples test', () => {
-      const name1 = '../notes/apple_picking.md';
-      const name2 = '../outputs/apple_picking.md';
-
-      const str1 = readFileSync(path.join(dirname, name1), {
-        encoding: 'utf8',
-        flag: 'r',
-      }).trim();
-
-      const str2 = readFileSync(path.join(dirname, name2), {
-        encoding: 'utf8',
-        flag: 'r',
-      }).trim();
-
-      assert.equal(str2, str1);
-    });
-  });
-
-  context('with number arguments', () => {
-    it('should return sum of arguments', () => {
-      // expect(sum(1, 2, 3, 4, 5)).to.equal(15)
-      assert(1 === 1);
-    });
-  });
-});
+// suiteInstance.afterAll(function () {
+//   process.on('exit', (code) => {
+//     process.exit(basicRun.stats.failures > 0)
+//   })
+// })

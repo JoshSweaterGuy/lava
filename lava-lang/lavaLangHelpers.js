@@ -10,6 +10,40 @@ const writeBack = async (filename, data) => {
   });
 };
 
+const forEachFileInDirSync = (dir) => {
+  const files = fs.readdirSync(dir, {
+    encoding: 'utf8',
+    flag: 'r',
+  });
+
+  let fdata = [];
+  for (const file of files) {
+    if (file === '.' || file === '..' || file[0] === '.') {
+      continue;
+    }
+    const newDir = path.join(dir, file);
+
+    const fileStat = fs.statSync(newDir, {
+      encoding: 'utf8',
+      flag: 'r',
+    });
+
+    if (fileStat.isFile()) {
+      const data = fs.readFileSync(newDir, {
+        encoding: 'utf8',
+        flag: 'r',
+      });
+
+      // const bytesString = String.fromCharCode(...data);
+      fdata.push({ filename: newDir, data: data });
+    } else if (fileStat.isDirectory()) {
+      fdata += forEachFileInDirSync(newDir, completion);
+    }
+  }
+
+  return fdata;
+};
+
 const forEachFileInDir = async (dir, completion) => {
   const files = await readdir(dir).catch((err) => {
     console.error('Directory does not exist', err);
@@ -164,4 +198,5 @@ export {
   getLocationOfStartStopWithinString,
   getStringWith,
   getStringWithout,
+  forEachFileInDirSync,
 };

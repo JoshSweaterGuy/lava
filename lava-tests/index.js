@@ -11,6 +11,7 @@ const notes = lavaPaths.notesDir;
 const templates = lavaPaths.templatesDir;
 const objects = lavaPaths.objectsDir;
 
-console.log(path.join(dirname, notes));
 console.log('Starting Test Suite...');
+console.log(path.join(dirname, notes));
+
 lavaRun(path.join(dirname, notes), path.join(dirname, templates), path.join(dirname, objects));

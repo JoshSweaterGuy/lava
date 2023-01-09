@@ -25,7 +25,7 @@
   "scripts": {
     "format": "prettier --write \"./**/*.{js,json}\"",
     "lint": "npx eslint .",
-    "test": "node ./lava-tests && mocha \"lava-tests/tests/**/*.js\"",
+    "test": "node ./lava-tests && mocha \"lava-tests/tests/**/*.js\" --timeout 50000",
     "prepare": "husky install"
   },
   "lint-staged": {
@@ -46,6 +46,7 @@
     "@babel/eslint-parser": "^7.19.1",
     "@babel/plugin-syntax-import-assertions": "^7.20.0",
     "@microsoft/eslint-formatter-sarif": "^3.0.0",
+    "chai": "^4.3.7",
     "eslint": "^8.31.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-node": "^4.1.0",
