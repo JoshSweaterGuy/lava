@@ -9,7 +9,7 @@ function changeLifecycleInStringTo(inlineString, lifecycle) {
   const startIndex = inlineString.length - 1 - LAVA_CONSTANTS.inlineLava.endInlineLava.length;
   inlineString = `${inlineString.substring(
     0,
-    startIndex
+    startIndex,
   )} ${lifeSymbol} ${lifecycle}${inlineString.substring(startIndex)}`;
 
   return inlineString;

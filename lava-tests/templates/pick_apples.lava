@@ -21,6 +21,7 @@ HEY THIS IS START OF INLINE
 
     There are %%! amt(HEADERS) !%% Headers!
 }!%%
+
 %%* MANY(
     IFMAKEFILL: (./newFIle.md, ./myTemplate.lava),
     IFMAKE: ./newFIle2.md,

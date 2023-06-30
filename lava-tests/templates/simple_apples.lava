@@ -9,16 +9,15 @@
     ANY FREE TEXT is in inline call as well as any text generated in exclamations
     NO comments appear in final or star(*) commands
 @%%
-
 ## simple apple picking
 **INCLUDING %%! params.apples !%%**
 
 %%! FOR apple in params.apples {
     %%! FOR person in params.people {
-* PICKING APPLES WITH %%! person !%%
-* %%! person !%% likes %%! apple !%% apples!
-%%! IF params.name == person {
-* %%! params.name !%%'s Name is %%! person !%%!
-        }!%%
+        - PICKING APPLES WITH %%! person !%%
+        - %%! person !%% likes %%! apple !%% apples!
+        %%! IF params.name == person {
+            - %%! params.name !%%'s Name is %%! person !%%!
+        } !%%
     } !%%
 } !%%

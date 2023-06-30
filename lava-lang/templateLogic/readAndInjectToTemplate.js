@@ -12,8 +12,7 @@ function readAndInjectToTemplate(tokenTree, input, localParams) {
     const inline = tokenTree.branches[i];
     // inline.value.value = tokenTree.value.value.substring(inline.value.startWithout, inline.value.endWithout)
     if (inline.value.type === 'COMMENT') {
-      output = output.substring(0, inline.value.startWith);
-      output.substring(inline.value.endWith);
+      output = output.substring(0, inline.value.startWith) + output.substring(inline.value.endWith);
     } else if (inline.value.type === 'EXCLAMATION') {
       const data = inline.value.body.trim();
       const callstr = inline.value.call.trim();
@@ -41,21 +40,19 @@ function readAndInjectToTemplate(tokenTree, input, localParams) {
         const varName = calls[1];
         const arrayName = calls[3];
         const array = convertLavaKeyToValue(input, localParams, arrayName);
-        const newLocalParams = { ...localParams };
+        let newLocalParams = { ...localParams };
 
-        for (const val of array) {
+        for (let val of array) {
           newLocalParams[varName] = val;
           // TODO: TRIM ONLY ONE TAB SO TABS CAN BE DONE IN FOR
           // TODO: MAKE HELPER FUNCTION TO REMOVE ONE TAB FROM EACH LINE IN STRING
-          replacement += `${readAndInjectToTemplate(
-            tokenTree.branches[i],
-            input,
-            newLocalParams
-          ).trimStart()}\n`;
+          replacement +=
+            readAndInjectToTemplate(tokenTree.branches[i], input, newLocalParams).trimStart() +
+            '\n';
         }
       } else if (call === 'IF') {
         const condition = callstr.substring(2, callstr.length);
-        // TODO: LOGIC FOR BOOLEAN
+        //TODO: LOGIC FOR BOOLEAN
         const conditionValue = calculateConditional(input, localParams, condition);
 
         if (conditionValue) {
@@ -64,7 +61,7 @@ function readAndInjectToTemplate(tokenTree, input, localParams) {
           replacement = readAndInjectToTemplate(
             tokenTree.branches[i],
             input,
-            localParams
+            localParams,
           ).trimStart();
         }
       } else if (call === 'DATE') {
@@ -72,8 +69,10 @@ function readAndInjectToTemplate(tokenTree, input, localParams) {
       } else if (call == 'JS') {
         replacement = eval(data.substring(2).replace(/['"`]+/g, ''));
       }
-      output = output.substring(0, inline.value.startWith);
-      replacement + output.substring(inline.value.endWith);
+      output =
+        output.substring(0, inline.value.startWith) +
+        replacement +
+        output.substring(inline.value.endWith);
     }
   }
 
@@ -92,20 +91,15 @@ function calculateConditional(input, localParams, condstr) {
 
   if (op === '==') {
     return first === second;
-  }
-  if (op === '!=') {
+  } else if (op === '!=') {
     return first !== second;
-  }
-  if (op === '>') {
+  } else if (op === '>') {
     return first > second;
-  }
-  if (op === '<') {
+  } else if (op === '<') {
     return first < second;
-  }
-  if (op === '>=') {
+  } else if (op === '>=') {
     return first >= second;
-  }
-  if (op === '<=') {
+  } else if (op === '<=') {
     return first <= second;
   }
 }
@@ -119,18 +113,19 @@ function convertLavaKeyToValue(input, localParams, keyString) {
   }
   if (inputLocale[0].toUpperCase() === 'PARAMS') {
     let data = input.params;
-    for (const subParam of inputLocale.slice(1)) {
+    for (let subParam of inputLocale.slice(1)) {
+      data = data[subParam];
+    }
+
+    return data;
+  } else {
+    let data = localParams;
+    for (let subParam of inputLocale) {
       data = data[subParam];
     }
 
     return data;
   }
-  let data = localParams;
-  for (const subParam of inputLocale) {
-    data = data[subParam];
-  }
-
-  return data;
 
   if (inputLocale === []) {
     console.error('no data to inject');

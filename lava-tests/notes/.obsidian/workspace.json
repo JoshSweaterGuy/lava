@@ -1,43 +1,23 @@
 {
   "main": {
-    "id": "fdd08c985d625d7d",
+    "id": "bb01751dd48c0f56",
     "type": "split",
     "children": [
       {
-        "id": "49e68b00cb47ccba",
+        "id": "a8920ef69754fb89",
         "type": "tabs",
         "children": [
           {
-            "id": "0d98d745d08f3fd6",
+            "id": "d9b4ac4223a6014a",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "classes_test.md",
+                "mode": "source",
+                "source": false
+              }
             }
-          },
-          {
-            "id": "470150b0502a7ef8",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            },
-            "group": "9e82bc3444582046"
-          }
-        ]
-      },
-      {
-        "id": "1a5d609b0990ea12",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "58fedcd3a09350ff",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            },
-            "group": "9e82bc3444582046"
           }
         ]
       }
@@ -45,15 +25,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "b2dce7c3069fbb66",
+    "id": "a0494d45abf52f39",
     "type": "split",
     "children": [
       {
-        "id": "95b633daa7db8db8",
+        "id": "53d575aaf7eaf12f",
         "type": "tabs",
         "children": [
           {
-            "id": "e8b17f505543ccae",
+            "id": "93dd239508a42e1c",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -63,7 +43,7 @@
             }
           },
           {
-            "id": "2d92b884d9e7e024",
+            "id": "624e2cfaeab7028e",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -78,10 +58,18 @@
             }
           },
           {
-            "id": "01b3b9eb24c8deba",
+            "id": "5a99360325e79cbb",
             "type": "leaf",
             "state": {
               "type": "starred",
+              "state": {}
+            }
+          },
+          {
+            "id": "48a9f597fc08c76c",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
               "state": {}
             }
           }
@@ -89,22 +77,23 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
-    "id": "15da228f70ca0834",
+    "id": "6f1905edbb235f32",
     "type": "split",
     "children": [
       {
-        "id": "2bcd1fd4bf30f9e2",
+        "id": "20cfe948a8735d75",
         "type": "tabs",
         "children": [
           {
-            "id": "d4d962836106b4b7",
+            "id": "3e9c5b676d399a23",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
+                "file": "classes_test.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -116,18 +105,19 @@
             }
           },
           {
-            "id": "bdd6d877beea0f54",
+            "id": "d5ff12f5536fbd8a",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "classes_test.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "82ad851f65dc3d7b",
+            "id": "10142e5db0e08e97",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -138,11 +128,13 @@
             }
           },
           {
-            "id": "c47ff7c50b52fae6",
+            "id": "b591bc835a0a8a72",
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "classes_test.md"
+              }
             }
           }
         ]
@@ -159,16 +151,9 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "lava-markup-generation-tool:lava": false
+      "command-palette:Open command palette": false
     }
   },
-  "active": "0d98d745d08f3fd6",
-  "lastOpenFiles": [
-    "notes/apple_picking.md",
-    "notes/Untitled.canvas",
-    "notes/Untitled 1.canvas",
-    "notes/classes_test.md",
-    "notes/advanced_apple_picking.md"
-  ]
+  "active": "d9b4ac4223a6014a",
+  "lastOpenFiles": []
 }
