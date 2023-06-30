@@ -2,7 +2,7 @@
 { "units": ["Interpreted Languages",
 "Synchronization ",
 "Graphs",
-"SPACE"],
+"CHRIS IS COOl"],
 "classname": "CS162"
 }
 class_toc -> auto |%%
@@ -18,7 +18,7 @@ Unit: InterpretedLanguages
 - THIS IS A UNIT
   Unit: Graphs
 - THIS IS A UNIT
-  Unit: SPACE
+  Unit: CHRISISCOOl
 - THIS IS A UNIT
 
 %%| end |%%
